@@ -1,0 +1,97 @@
+body {
+	background-color: #F9F9F9!important;
+}
+
+.time-row {
+	margin-bottom: 40px;
+	margin-top: 40px;
+}
+
+.card-text a {
+	color: #212529;
+	text-decoration: none;
+}
+
+.card-text a:hover {
+	color: #838383;
+	text-decoration: none;
+}
+
+
+@media (min-width: 577px) {
+
+.card-horizontal {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  width: 100%;
+  max-height: 269px;
+  max-width: 730px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.card-img-left {
+  border-bottom-left-radius: calc(.25rem - 1px);
+  border-top-left-radius: calc(.25rem - 1px);
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  padding-right: 1em;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.card-body-right {
+  -ms-flex: 1 0 0;
+  flex: 1 0 0;
+  padding: 1.25rem;
+}
+
+}
+
+@media (max-width: 576px) {
+
+.card-horizontal {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  width: 70%;
+  margin-left: 15%;
+  overflow: hidden;
+}
+
+.card-img-left {
+  border-top-right-radius: calc(.25rem - 1px);
+  border-top-left-radius: calc(.25rem - 1px);
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 100%;
+  padding-right: 0;
+}
+
+.card-body-right {
+  -ms-flex: 1 0 0;
+  flex: 1 0 0;
+  padding: 1.25rem;
+}
+
+}
