@@ -2,6 +2,11 @@ body {
 	background-color: #F9F9F9!important;
 }
 
+.container {
+	margin-bottom: 40px;
+	margin-top: 40px;
+}
+
 .time-row {
 	margin-bottom: 40px;
 	margin-top: 40px;
