@@ -48,7 +48,9 @@ body {
 }
 
 #homebody { 
-	height: 700px;
+	height: 800px;
+	background-image: url(/img/bg.png);
+	background-repeat: no-repeat;
 }
 
 #hb-left {
@@ -61,6 +63,15 @@ body {
 
 #hb-right {
  float: right; 
+}
+
+@media only screen and (max-width: 1000px) {
+	#homebody {
+		background-image: url(/img/bg_fade.png);
+	}
+	#hb-right {
+		display: none;
+	}
 }
 
 #homefooter {
