@@ -41,6 +41,12 @@ body {
 #headerright a:hover { color: #13171a; text-decoration: none;}
 #headerright a:active { color: #13171a; text-decoration: none;}
 
+@media only screen and (max-width: 550px) {
+	#headerright {
+		display: none;
+	}
+}
+
 #homebody { 
 	height: 700px;
 }
