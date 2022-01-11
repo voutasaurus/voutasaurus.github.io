@@ -17,6 +17,41 @@ body {
 	text-decoration: none;
 }
 
+.imagebreak1 {
+  width: 500px;
+  margin: auto;
+  border: 0px;
+  padding: 10px 0px 30px 0px;
+}
+
+.imagebreak2 {
+  width: 700px;
+  margin: auto;
+  border: 0px;
+  padding: 10px 0px 30px 0px;
+}
+
+.imagebreak3 {
+  width: 700px;
+  margin: auto;
+  border: 0px;
+  padding: 10px 0px 30px 0px;
+}
+
+.imagebreak4 {
+  width: 600px;
+  margin: auto;
+  border: 0px;
+  padding: 10px 0px 30px 0px;
+}
+
+.blogpost {
+  margin: 50px 0px 100px 0px;
+}
+
+.blogheader {
+  margin: 0px 0px 30px 0px;
+}
 
 @media (min-width: 577px) {
 

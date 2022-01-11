@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Quantum Square">
+	<meta name="author" content="Anthony Voutas">
+
+	<link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/favicons/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+	<link rel="manifest" href="/manifest.json">
+
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
+	<meta name="application-name" content="Quantum Square"/>
+	<meta property="og:title" content="Quantum Square" />
+	<meta property="og:description" content="Quantum Square" />
+
+	<title>Quantum Square</title>
+	<link rel="stylesheet" type="text/css" href="/css/resume.css">
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+</head>
+
+<body>
+
+	<div class="container">
+	<div class="blogpost">
+
+	<h1 class="blogheader">The Quantum Square</h1>
+
+	<p>
+		So you heard quantum computation and entanglement were a thing. They probably make no goddamn sense. Maybe this will help at least provide a different way of looking at it. Let's look at something called the Mermin-Peres Magic Square, which I call here the "quantum square" purely for convenience (not at all to downplay the contributions of David Mermin or Asher Peres).
+	</p>
+
+	<p>
+		Before we talk about the quantum square we have to review something. In particular we have to review what a (so called) magic square is. Then we can get into the real magic.
+	</p>
+
+	<p>
+	A 3x3 magic square is a 3x3 grid of numbers such that each column and each row sums to the same value. Sometimes we add the same constraint to the diagonals but let's ignore that here.
+	</p>
+
+	<p>
+		For example:
+	</p>
+	
+	<p>
+		4 9 2<br>
+		3 5 7<br>
+		8 1 6<br>
+	</p>
+	
+	<p>
+		The sum of each column is 15, the sum of each row is 15, so this is a magic square. Cool? All refreshed? Cool.
+	</p>
+	
+	<p>
+		A quantum square is slightly different. A 3x3 quantum square is a 3x3 grid of 0s and 1s such that each row sums to an even number and each column sums to an odd number.
+	</p>
+
+	<p>
+		0+0+0 = 0 is even<br>
+		0+0+1 = 1 is odd<br>
+		0+1+0 = 1 is odd<br>
+		0+1+1 = 2 is even<br>
+	</p>
+	
+	<p>
+		And so on...
+	</p>
+
+	<p>
+		The sum of a list of numbers being even or odd is what is called a “parity” constraint. If you know what that means, good for you. If not, parity is just a fancy math way of saying evenness. I promise there’s nothing up my sleeve.
+	</p>
+	
+	<p>
+		At this point you may have already tried to construct a quantum square, either in your head or on a piece of paper. If you haven’t, why not try it now? (don't spend too long on this though)
+	</p>
+	
+	<p>
+		I'll wait.
+	</p>
+
+	<div class="imagebreak1">
+		<img src="/img/waiting.gif">
+	</div>
+
+	<p>
+		Spoilers: there is no such quantum square.
+	</p>
+	
+	<p>
+		It’s literally impossible to construct a square that satisfies the given constraints.
+	</p>
+
+	<p>
+		Well. It’s impossible… classically.
+	</p>
+	
+	<p>
+		If we change the problem slightly, and introduce a property of quantum information, we can do something interesting.
+	</p>
+	
+	<p>
+		But we're getting ahead of ourselves. First we need some friends.
+	</p>
+	
+	<p>
+		Our old friend Alice is back from Wonderland and is now a quantum scientist, which, honestly, makes a lot of sense.
+	</p>
+	
+	<p>
+		Meanwhile, Barb from Stranger Things actually did escape the Upside Down but instead of going back to her normal life she ran away to study quantum physics, because of course she did.
+	</p>
+	
+	<p>
+		Lastly, Charlie Bucket, now the owner and President of the Wonka Corporation, has stepped down as CEO to focus on supervising Wonka’s Research and Development Department, which is, among other things, funding quantum research because Charlie feels like his existing candy just isn’t weird or dangerous enough.
+	</p>
+	
+	<p>
+		So Alice, Barb and Charlie are now in the Wonka R&D facility setting up a little game to do with a quantum square.
+	</p>
+	
+	<p>
+		First, Alice and Barb will be allowed to talk and share some strategy and materials. Then Alice will go to one room, and Barb will go to another separate room. Once Alice and Barb are in separate rooms they have no phones, internet, and can’t hear or see each other or pass notes. No communicating allowed.
+	</p>
+	
+	<p>
+		Charlie will then go to Alice’s room, and ask Alice to provide the first, second, or third row of a quantum square.
+	</p>
+	
+	<p>
+		Charlie will then go to Barb’s room, and ask Barb to provide the first, second, or third column of a quantum square.
+	</p>
+	
+	<p>
+		Then Charlie will check that Alice’s row sums to an even number, that Barb’s column sums to an odd number, and that the overlapping cell of Alice’s row and Barb’s column matches.
+	</p>
+	
+	<p>
+		If all those things check out, Alice and Barb win the game. If one of them doesn’t check out, then they lose.
+	</p>
+	
+	<p>
+		To reiterate, Alice and Barb are separated so Alice does not know which column Charlie picked from Barb and Barb does not know which row Charlie picked from Alice.
+	</p>
+	
+	<p>
+		So for example if Charlie chooses row 1 and Alice gives 000 and then Charlie choses column 1 and Barb gives 010 then all the constraints are satisfied because 000 sums to even, 010 sums to odd, and (1,1)=0 matches, so they win.
+	</p>
+	
+	<p>
+		However if Charlie chooses row 2 and column 1 and Alice gives 000 and Barb gives 010 then the parity constraints are satisfied but the (2,1) cell doesn’t match, so they lose.
+	</p>
+	
+	<div class="imagebreak2">
+		<img src="/img/thinking.gif">
+	</div>
+
+	<p>
+		The only way for Alice and Barb to win this game 100% of the time is for them to share a complete quantum square ahead of time, right? But that’s impossible. No such square exists. Classically, the best they can do is win 8 out of every 9 times by sharing a quantum square where only one of the 9 entries is broken.
+	</p>
+	
+	<p>
+		Let's see how they could win this game 8 out of every 9 times. If Alice and Barb set themselves up with the following:
+	</p>
+	
+	<p>
+		Alice has:
+	</p>
+	
+	<p>
+		0 0 0<br>
+		1 1 0<br>
+		0 0 0<br>
+	</p>
+	
+	<p>
+		Barb has:
+	</p>
+	<p>
+		0 0 0<br>
+		1 1 0<br>
+		0 0 1<br>
+	</p>
+	
+	<p>
+		Then they will win unless Charlie picks row three and column three (which is a 1/9 chance if Charlie picks randomly). And if Charlie doesn't pick randomly Alice and Barb can randomly choose which cell to be broken and that is mathematically the same. So they’ll win 8 out of 9 times.
+	</p>
+	
+	<p>
+		Now here’s were things get weird.
+	</p>
+	
+	<p>
+		The spoiler here is that Alice and Barb can do better than a score of 8/9, with a little something called quantum entanglement.
+	</p>
+	
+	<p>
+		In their pre-game strategy session Alice and Barb share a specific quantum state of four entangled qubits. Then once they are separated they can use this quantum state and a quantum algorithm to generate winning answers to Charlie’s questions 100% of the time, all without communication.
+	</p>
+	
+	<p>
+		The mathematics of the algorithm that achieves this 100% result does require some quantum algebra. So instead of doing quantum algebra I will use magic. Alice, Barb and Charlie are all pretty familiar with magic of various kinds so this hopefully won’t be too difficult for them to follow.
+	</p>
+	
+	<div class="imagebreak3">
+		<img src="/img/magic.gif">
+	</div>
+
+	<p>
+		The Wonka R&D department has developed a line of special magical orbs called Entangled Orbs which can briefly (and with great care) be duplicated such that the two duplicates can be separated. A duplicated orb can then be activated with certain spells which cause it to produce either a red or a green light. We’ll get into the dynamics of this orb a bit later.
+	</p>
+	
+	<p>
+		Also the Wonka R&D department has acquired several sets of magical Pauli stones that can be used in various arangements to produce different spells.
+	</p>
+	
+	<p>
+		The Pauli stones come in sets of three stones labelled Xeno, Yotta, and Zaphir. There are also just some regular non magical stones laying around because those are needed too.
+	</p>
+	
+	<p>
+		There are nine magical spells we can do by arranging these stones. It’s not necessary to understand or remember each spell but here they all are in case you’re interested:
+	</p>
+	
+	<ol>
+		<li>
+			We can put a Xeno on top of a regular stone.
+		</li>
+		<li>
+			We can put a regular stone on top of a Xeno.
+		</li>
+		<li>
+			We can get a duplicate Xeno and put it on top of another Xeno.
+		</li>
+		<li>
+			We can put a regular stone on top of a Zaphir.
+		</li>
+		<li>
+			We can put a Zaphir on top of a regular stone.
+		</li>
+		<li>
+			We can get a duplicate Zaphir and put it on top of another Zaphir.
+		</li>
+		<li>
+			We can flip a Xeno over and put it face down on top of a Zaphir.
+		</li>
+		<li>
+			We can flip a Zaphir over and put it face down on a Xeno.
+		</li>
+		<li>
+			We can get a duplicate Yotta and put it on top of another Yotta.	
+		</li>
+	</ol>
+	
+	<p>
+		Once the stones are in place for a spell the caster adds a single drop of water from a height of one foot.
+	</p>
+
+	<p>
+		Each of these nine spells will cause the nearest instance of an Entangled Orb to emit either a red or a green light.
+	</p>
+	
+	<p>
+		Only three of these spells can be cast on any given instance of an Entangled Orb. The orb instance will disintegrate after emitting its third light.
+	</p>
+	
+	<p>
+		Now, equipped with this orb, Alice and Barb are ready to play the game. They duplicate an Entangled Orb in the pre game strategy session and each take their copy of the orb.
+	</p>
+	
+	<p>
+		When Charlie asks Alice for row 1, Alice will cast spells 1, 2, and 3 and create her row with 1 for red and 0 for green.
+	</p>
+	
+	<p>
+		And then when Charlie asks Barb for column 2, Barb will cast spells 2, 5 and 8 and create her column with 1 for red and 0 for green.
+	</p>
+	
+	<p>
+		Both copies of the orb disintegrate and nobody ever knows what the other 4 values of the quantum square were.
+	</p>
+	
+	<p>
+		The three of them then repeat this strategy hundreds of times over the next few weeks. With the rows 1 and 2 and 3 being revealed by spells 1,2,3 and 4,5,6 and 7,8,9 respectively and the columns 1 and 2 and 3 being revealed by spells 1,4,7 and 2,5,8 and 3,6,9 respectively.
+	</p>
+	
+	<p>
+		This strategy works 100% of the time.
+	</p>
+	
+	<div class="imagebreak4">
+		<img src="/img/success.jpg">
+	</div>
+
+	<p>
+		Charlie, being the owner of Wonka Corporation is bewildered and impressed at his own genius, despite doing almost none of the actual work.
+	</p>
+
+	<p>
+		Alice and Barb are satisfied that they finally solved the quantum square problem and will get to continue their employment at Wonka Corporation.
+	</p>
+	
+	<p>
+		Now, at this point you might be suspecting that the two duplicated orbs are communicating to each other instantaneously at a distance via some sort of radio, wormhole, or some purely mysterious magic. They are not.
+	</p>
+
+	<p>
+		The magic they use is reasonably well understood and it doesn’t involve faster than light communication, nor any communication at all.
+	</p>
+	
+	<p>
+		The two instances of the orb carry inside them information that is different to the normal kind of information we are accustomed to.
+	</p>
+	
+	<p>
+		The orbs do not know what their answer will be before they are asked and they do not need to check with each other at any point after they are separated. Their answer is the result of a quantum computation on an entangled quantum state of four qubits, that computation being provided by the three spells used combined with the original entangled state set up when the orbs are originally divided.
+	</p>
+
+	<p>
+		It’s probably impossible to fully grasp the nature of this quantum computation without knowing the specific quantum algebra involved in the algorithm here. In other words, how the spells actually apply to the quantum state mathematically. The higher level point is that it allows Alice and Barb to do overlapping computations that make it look like they are communicating, when they are in fact not communicating at all, at least not after the initial entanglement event.
+	</p>
+
+	<p>
+		Is this useful in the real world for anything other than games? Maybe? Plenty of stuff starts out being for games and ends up being super useful beyond games, graphical user interfaces being a great example. Extremely hopeful speculation on my part but maybe the ability for people to do some overlapping computation on the spot without communicating will be the key to resolving some particularly thorny privacy problems.
+	</p>
+
+	<p>
+		What is clear though is that this kind of thing seems fundamentally impossible to do with classical computation without active communication. Even if one was to describe in complete detail the quantum states using classical information, the "collapse" step in which spells are cast (i.e. observations made) cannot be guaranteed to be correlated across spacetime without actual real world quantum entanglement.
+	</p>
+
+	<p>
+		In any case, hopefully this helped you understand that quantum entanglement is basically indistinguishable from magic, but like, a really weirdly specific kind of magic, and not like the kind that can enable faster than light communication.
+	</p>
+
+	<p>If you're interested in any addition materials on the topic (fair warning these are all more technical):</p>
+	<ul>
+		<li><a href=
+			"https://nonlocal.libsyn.com/001-the-origin-of-the-mermin-peres-magic-square">Nonlocal Episode 1</a>, a podcast on the origin of the Mermin Peres Magic Square</li>
+		<li>A <a href="https://meirizarrygelpi.github.io/posts/physics/mermin-peres-magic-square-game-2/index.html">blog post</a> looking at the specific quantum algebra and proof of the algorithm's 100% success</li>
+		<li>Mermin's <a href="https://doi.org/10.1103/PhysRevLett.65.3373">paper</a></li>
+		<li>Peres' <a href="https://doi.org/10.1016/0375-9601(90)90172-K">paper</a></li>
+	</ul>
+
+	<p>
+		Standard disclaimer that if I got anything technically wrong here or made up a magical crossover world that was deeply upsetting to any fantasy fans that's totally my fault and not anybody else's.
+	</p>
+
+	</div>
+	</div>
+
+</body>
+</html>
