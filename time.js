@@ -6,14 +6,36 @@ function timestampParam() {
 
 function showTime() {
     const ts = timestampParam();
-    console.log(ts);
     if (ts === null || ts === "null") {
-        return "Set the time in the t param!"
+        return renderTimePicker();
     }
     const d = new Date(ts);
-    return d.toString();
+    return "<h1>" + d.toString() + "</h1>";
+}
+
+function renderTimePicker() {
+    return `<form>
+        <input type="date" id="dateselect" />
+        <input type="time" id="timeselect" />
+        <p>
+          <span id="value">select date and time above</span>
+        </p>
+    </form>`
 }
 
 window.onload = function() {
-    document.getElementById("time").innerHTML = "<h1>" + showTime() + "</h1>";
+    document.getElementById("time").innerHTML = showTime();
+
+    const ds = document.getElementById("dateselect");
+    const ts = document.getElementById("timeselect");
+
+    const vs = document.getElementById("value");
+
+    ds.addEventListener("input", () => {
+       vs.innerText = ds.value;
+    }, false);
+
+    ts.addEventListener("input", () => {
+       vs.innerText = ts.value;
+    }, false);
 }
