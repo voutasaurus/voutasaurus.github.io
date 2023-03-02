@@ -14,7 +14,7 @@ function showTime() {
     if (!ts) {
         return "Set the time in the t param!"
     }
-    const d = Date.parse(ts);
+    const d = new Date(ts);
     console.log(d);
     const str = d.toLocaleString();
     console.log(str);
