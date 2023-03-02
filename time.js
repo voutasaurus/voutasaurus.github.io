@@ -28,7 +28,9 @@ function tzOffset() {
     const date = new Date();
     const offset = date.getTimezoneOffset();
     const tz = new Date(0,0,0,0,Math.abs(offset));
-    return `${ offset > 0 ? '-' : '+'}${tz.getHours()}:${("" + tz.getMinutes()).padStart(2,'0')}`;
+    const hours = ("" + tz.getHours()).padStart(2,"0");
+    const minutes = ("" + tz.getMinutes()).padStart(2,"0");
+    return `${ offset > 0 ? '-' : '+'}${hours}:${minutes}`;
 }
 
 window.onload = function() {
@@ -41,7 +43,7 @@ window.onload = function() {
 
     ds.addEventListener("input", () => {
        console.log(ts.value);
-       if (ts.value === null) {
+       if (!ts.value) {
            return
        }
        const ref = "/time?t=" + encodeURIComponent(ds.value + "T" + ts.value + tzOffset());
@@ -50,7 +52,7 @@ window.onload = function() {
 
     ts.addEventListener("input", () => {
        console.log(ds.value);
-       if (ds.value === null) {
+       if (!ds.value) {
            return
        }
        const ref = "/time?t=" + encodeURIComponent(ds.value + "T" + ts.value + tzOffset());
