@@ -33,11 +33,11 @@ window.onload = function() {
 
     ds.addEventListener("input", () => {
        const ref = "/time?t=" + ds.value + "T" + ts.value
-       vs.innerText = `<a href="${ref}">time</a>`;
+       vs.innerHtml = `<a href="${ref}">time</a>`;
     }, false);
 
     ts.addEventListener("input", () => {
        const ref = "/time?t=" + ds.value + "T" + ts.value
-       vs.innerText = `<a href="${ref}">time</a>`;
+       vs.innerHtml = `<a href="${ref}">time</a>`;
     }, false);
 }
