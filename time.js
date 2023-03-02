@@ -16,7 +16,7 @@ function showTime() {
     }
     const d = new Date(ts);
     console.log(d);
-    const str = d.toLocaleString();
+    const str = d.toString();
     console.log(str);
     return str;
 }
