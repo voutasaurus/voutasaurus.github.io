@@ -1,17 +1,26 @@
 function timestampParam() {
     const queryString = window.location.search;
+    console.log(queryString);
     const urlParams = new URLSearchParams(queryString);
-    return decodeURIComponent(urlParams.get("t"))
+    console.log(urlParams);
+    const t = decodeURIComponent(urlParams.get("t"))
+    console.log(t);
+    return t;
 }
 
-function time() {
+function showTime() {
     const ts = timestampParam();
+    console.log(ts);
     if (!ts) {
         return "Set the time in the t param!"
     }
-    return Date.parse(ts).toLocaleString();
+    const d = Date.parse(ts);
+    console.log(d);
+    const str = d.toLocaleString();
+    console.log(str);
+    return str;
 }
 
 window.onload = function() {
-    document.getElementById("time").innerHTML = "<h1>" + time() + "</h1>";
+    document.getElementById("time").innerHTML = "<h1>" + showTime() + "</h1>";
 }
