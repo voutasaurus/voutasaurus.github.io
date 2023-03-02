@@ -1,11 +1,7 @@
 function timestampParam() {
     const queryString = window.location.search;
-    console.log(queryString);
     const urlParams = new URLSearchParams(queryString);
-    console.log(urlParams);
-    const t = decodeURIComponent(urlParams.get("t"))
-    console.log(t);
-    return t;
+    return decodeURIComponent(urlParams.get("t"))
 }
 
 function showTime() {
@@ -15,10 +11,7 @@ function showTime() {
         return "Set the time in the t param!"
     }
     const d = new Date(ts);
-    console.log(d);
-    const str = d.toString();
-    console.log(str);
-    return str;
+    return d.toString();
 }
 
 window.onload = function() {
