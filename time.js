@@ -23,6 +23,13 @@ function renderTimePicker() {
     </form>`
 }
 
+function tzOffset() {
+    const date = new Date();
+    const offset = date.getTimezoneOffset();
+    const tz = new Date(0,0,0,0,Math.abs(offset));
+    return `${ offset > 0 ? '-' : '+'}${tz.getHours()}:${("" + tz.getMinutes()).padStart(2,'0')}`
+}
+
 window.onload = function() {
     document.getElementById("time").innerHTML = showTime();
 
@@ -32,12 +39,18 @@ window.onload = function() {
     const vs = document.getElementById("value");
 
     ds.addEventListener("input", () => {
-       const ref = "/time?t=" + ds.value + "T" + ts.value
+       if (ts.value === null) {
+           return
+       }
+       const ref = "/time?t=" + ds.value + "T" + ts.value + tzOffset();
        vs.innerHTML = `<a href="${ref}">time</a>`;
     }, false);
 
     ts.addEventListener("input", () => {
-       const ref = "/time?t=" + ds.value + "T" + ts.value
+       if (ds.value === null) {
+           return
+       }
+       const ref = "/time?t=" + ds.value + "T" + ts.value + tzOffset();
        vs.innerHTML = `<a href="${ref}">time</a>`;
     }, false);
 }
