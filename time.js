@@ -17,9 +17,9 @@ function renderTimePicker() {
     return `<form>
         <input type="date" id="dateselect" />
         <input type="time" id="timeselect" />
-        <p>
-          <span id="value">select date and time above</span>
-        </p>
+        <span id="value">
+          <p>select date and time above</p>
+	</span>
     </form>`
 }
 
