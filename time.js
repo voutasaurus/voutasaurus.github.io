@@ -42,7 +42,7 @@ window.onload = function() {
        if (ts.value === null) {
            return
        }
-       const ref = "/time?t=" + ds.value + "T" + ts.value + tzOffset();
+       const ref = "/time?t=" + encodeURIComponent(ds.value + "T" + ts.value + tzOffset());
        vs.innerHTML = `<a href="${ref}">time</a>`;
     }, false);
 
@@ -50,7 +50,7 @@ window.onload = function() {
        if (ds.value === null) {
            return
        }
-       const ref = "/time?t=" + ds.value + "T" + ts.value + tzOffset();
+       const ref = "/time?t=" + encodeURIComponent(ds.value + "T" + ts.value + tzOffset());
        vs.innerHTML = `<a href="${ref}">time</a>`;
     }, false);
 }
