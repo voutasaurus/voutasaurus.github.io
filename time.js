@@ -6,7 +6,6 @@ function timestampParam() {
 
 function showTime() {
     const ts = timestampParam();
-    console.log(ts);
     if (ts === null || ts === "null") {
         return renderTimePicker();
     }
@@ -42,7 +41,6 @@ window.onload = function() {
     const vs = document.getElementById("value");
 
     ds.addEventListener("input", () => {
-       console.log(ts.value);
        if (!ts.value) {
            return
        }
@@ -51,7 +49,6 @@ window.onload = function() {
     }, false);
 
     ts.addEventListener("input", () => {
-       console.log(ds.value);
        if (!ds.value) {
            return
        }
