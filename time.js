@@ -32,10 +32,12 @@ window.onload = function() {
     const vs = document.getElementById("value");
 
     ds.addEventListener("input", () => {
-       vs.innerText = ds.value;
+       const ref = "/time?t=" + ds.value + "T" + ts.value
+       vs.innerText = `<a href="${ref}">time</a>`;
     }, false);
 
     ts.addEventListener("input", () => {
-       vs.innerText = ts.value;
+       const ref = "/time?t=" + ds.value + "T" + ts.value
+       vs.innerText = `<a href="${ref}">time</a>`;
     }, false);
 }
