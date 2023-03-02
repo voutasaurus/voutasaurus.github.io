@@ -7,7 +7,7 @@ function timestampParam() {
 function showTime() {
     const ts = timestampParam();
     console.log(ts);
-    if (ts === null) {
+    if (ts === null || ts === "null") {
         return "Set the time in the t param!"
     }
     const d = new Date(ts);
