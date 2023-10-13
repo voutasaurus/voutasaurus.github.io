@@ -1,0 +1,2164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!-- Misc Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="format-detection" content="telephone=no">
+
+    
+    <!-- Standard Meta Tags -->
+    <title>{{.Title}}</title>
+    <meta name="url" content="{{.URL}}">
+    <meta name="author" content="{{.Author}}">
+    <meta name="description" content="{{.Description}}">
+    <meta name="date" content="{{.DatePublished}}">
+    <meta name="keywords" content="literai, artificial fiction, generated ficition, nanogenmo, deep writing, hallucinations, artificial intelligence, ai, machine learning, neural networks, generative networks, literature, fiction, fan fiction, fan-fiction, creative robot, robot, writing">
+    
+    <!-- Facebook Open Graph Meta Tags -->
+
+    <meta property="og:site_name" content="Literai" />
+    <meta property="og:rich_attachment" content="true" />
+    <meta property="article:publisher" content="https://www.facebook.com/literaistories/" />
+    <meta property="og:url" content="{{.URL}}" />
+
+    <meta property="og:type" content="{{.Type}}" /> <!-- website or article -->
+    <meta property="og:title" content="{{.Title}}" /> <!-- Story title or page title -->
+    <meta property="og:description" content="{{.Description}}" />
+
+    <meta property="og:image" content="http://www.literai.com/dist/css/img/literai-social.png" /> <!-- 1200x630 px  up to 8mb  1.91:1 aspect ratio -->
+    <meta property="og:image:secure_url" content="https://www.literai.com/dist/css/img/literai-social.png"> <!-- https:// -->
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Open Graph Meta Tags -->
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content="{{.URL}}" />
+    <meta name="twitter:title" content="{{.Title}}" />
+    <meta name="twitter:description" content="{{.Description}}" />
+    <meta name="twitter:image" content="http://www.literai.com/dist/css/img/literai-social.png" />
+
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/dist/css/img/favi/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/dist/css/img/favi/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/dist/css/img/favi/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/dist/css/img/favi/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/dist/css/img/favi/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/dist/css/img/favi/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/dist/css/img/favi/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/dist/css/img/favi/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/dist/css/img/favi/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/dist/css/img/favi/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/dist/css/img/favi/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/dist/css/img/favi/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/dist/css/img/favi/favicon-16x16.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="/dist/css/fa/css/font-awesome.min.css">
+
+    <!-- Simditor CSS -->
+    <link rel="stylesheet" type="text/css" href="/dist/css/simditor.css" />
+
+    <!-- Sweet Alert CSS -->
+    <link rel="stylesheet" type="text/css" href="/dist/css/sweetalert.css">
+
+    <!-- Fine Uploader CSS -->
+    <link href="/dist/js/fine-uploader/fine-uploader-new.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+<!-- ######################################################### -->
+<!-- ####################### Nav Bar ######################### -->
+<!-- ######################################################### -->
+
+
+    <div class="hidden-sm-down">
+      <nav class="navbar navbar-fixed-top navbar-dark bg-inverse literai__navbar">
+
+        <!-- Brand -->
+
+          <a class="navbar-brand literai__navbar__logo" href="https://www.literai.com">liter<span class="literai__navbar__logo--ai">ai</span></a>
+
+          <!-- Left Side -->
+          <ul class="nav navbar-nav nav-link literai__navbar__ul literai__navbar__ul--left">
+            <li class="nav-item">
+              <a class="nav-link literai__navbar__link" href="/new/">Upload Story</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link literai__navbar__link" href="/tutorial/">Tutorials</a>
+            </li>
+
+          </ul>
+
+          <!-- Right Side -->
+          <div class="literai__navbar__right">
+            <ul class="nav navbar-nav nav-link literai__navbar__ul literai__navbar__ul--first">
+
+              <li class="nav-item">
+                <a class="nav-link literai__navbar__link" href="https://www.facebook.com/groups/literai/">Community</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link literai__navbar__link" href="/about/">About</a>
+              </li>
+
+              <li class="nav-item">
+                <span class="literai__navbar__link literai__navbar__link--no-link">|</span>
+              </li>
+
+            </ul>
+
+            <ul class="nav navbar-nav nav-link literai__navbar__ul literai__navbar__ul--second" id="navbar-user">
+              <li class='nav-item'>
+                <a class='nav-link literai__navbar__link' href='/login/'>Log In</a>
+              </li>
+              <li class='nav-item'>
+                <a class='nav-link literai__navbar__link' href='/login/'>Sign Up</a>
+              </li>
+            </ul>
+
+          </div>
+
+      </nav>
+    </div>
+
+    <!-- Small Responsive Nav Bar -->
+
+    <div class="hidden-md-up">
+      <nav class="navbar navbar-fixed-top navbar-dark bg-inverse literai__navbar">
+
+        <!-- Brand -->
+
+          <a class="navbar-brand literai__navbar__logo" href="https://www.literai.com">liter<span class="literai__navbar__logo--ai">ai</span></a>
+
+          <button class="navbar-toggler literai__navbar__ul--right-button" type="button" data-toggle="collapse" data-target="#nav-content">
+            ☰
+          </button>
+
+      </nav>
+
+      <nav class="navbar navbar-fixed-top navbar-dark bg-inverse literai__navbar literai__navbar--dropdown">
+
+          <!-- Nav Content -->
+          <div class="collapse navbar-toggleable-sm" id="nav-content">
+            <ul class="nav navbar-nav literai__navbar__ul--veritcal">
+
+              <li class="nav-item">
+                <a class="nav-link literai__navbar__link" href="/new/">Upload Story</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link literai__navbar__link" href="/tutorial/">Tutorials</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link literai__navbar__link" href="https://www.facebook.com/groups/literai/">Community</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link literai__navbar__link" href="/about/">About</a>
+              </li>
+
+            </ul>
+
+            <ul class="nav navbar-nav literai__navbar__ul--veritcal" id="navbar-user-small">
+            </ul>
+
+          </div>
+      </nav>
+    </div>
+
+    <div class="literai__home__splash" id="home-splash" style="display: none;">
+      <h1>Fiction Written by Computers</h1>
+    </div>
+
+    <div class="literai__main-section">
+
+      <!-- ######################################################### -->
+      <!-- ###################### Home Page ######################## -->
+      <!-- ######################################################### -->
+
+      <div class="literai__home" id="home" style="display: none;"></div>
+
+      <!-- ######################################################### -->
+      <!-- ###################### Story Page ####################### -->
+      <!-- ######################################################### -->
+
+
+      <div id="story-error" class="story-error" style="display: none;">
+
+        <div class="literai__story__content-box" style="min-height: 300px;">
+            <div class="literai__story__content-box__title">404: Story Not Found</div>
+            <div class="literai__story__content-box__summary-section">
+              <div class="literai__story__content-box__summary-section-text">This story has gone missing! Check out other stories written by computers <a href="https://www.literai.com">here</a>.</div>
+            </div>
+        </div>
+
+      </div>
+
+      <div id="story" class="literai__story" style="display: none;">
+
+        <div class="literai__story__top-color-bar"></div>
+
+        <div class="literai__story__content-box">
+
+          <div class="literai__story__content-box__title" id="story-title">{{.Title}}</div>
+
+          <div class="literai__story__content-box__author"><span>Created by <span id="story-author">{{.Author}}</span><br /><a href='/about/'>Written by a Computer</a></span></div>
+
+          <div class="literai__story__content-box__options" id="story-options"></div>
+
+          <div class="literai__story__content-box__summary-section">
+
+            <div class="literai__story__content-box__summary-section-text" id="story-summary">{{.Description}}</div>
+
+            <div class="literai__story__content-box__summary-section-time" id="story-time"></div>
+
+          </div>
+
+          <div class="literai__story__content-box__content" id="story-content-box" style="max-height: 4000px; overflow: hidden;">
+            <div id="story-content"></div>
+          </div>
+          <div id="show-more" class="literai__story__show-more" style="display: none;" onclick="show_more(event)">Show More</div>
+
+        </div>
+
+        <div class="literai__story__methods-box">
+
+          <div class="literai__story__methods-box-title">Methods</div>
+
+          <div class="literai__story__methods-box-text" id="story-methods"></div>
+
+        </div>
+
+        <div class="literai__story__methods-box" style="padding: 30px 50px 15px 50px;">
+           <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+        </div>
+
+        <div id="literai-story-model-box">
+
+        </div>
+
+        <div id="literai-story-data-box">
+
+        </div>
+
+        <div class="literai__story__comment-box" id="story-comment-box">
+
+        </div>
+      </div>
+
+      <!-- ######################################################### -->
+      <!-- ################### New Story Page ###################### -->
+      <!-- ######################################################### -->
+
+      <div id="new-error" class="new-story" style="display: none;">
+
+        <div class="literai__story__content-box" style="min-height: 300px;">
+            <div class="literai__story__content-box__title">Upload Story</div>
+            <div class="literai__story__content-box__summary-section">
+              <div class="literai__story__content-box__summary-section-text">You need to <a href="/login/">log in</a> to upload a story.</div>
+            </div>
+        </div>
+
+      </div>
+
+
+      <div id="new" class="new-story" style="display: none;">
+
+        <div class="literai__story__top-color-bar"></div>
+
+        <div class="literai__story__content-box">
+
+          <div class="literai__story__content-box__title">Upload Story</div>
+
+          <div class="literai__story__content-box__summary-section">
+
+            <div class="literai__story__content-box__summary-section-text">
+              <p>Here is where you can upload a story written by an Aritifical Intelligence. To learn how to write a story with an AI <a href="https://www.literai.com/tutorial/">check out our tutorial</a>!</p>
+              <p>Under the Summary section describe your story and what makes it interesting. In the Story section paste the story your AI wrote and use the formatting options to style it. Under the Methods section describe how you created the story and the process behind it.</p>
+              <p>The Upload Model and Upload Data sections take a .t7 and .txt file respectively and should be used if you used the tutorial or a similar process to create your story. Otherwise you can ignore these fields.</p>
+
+              <p>All work uploaded on this site will be licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+            </div>
+
+          </div>
+
+          <div class="literai__story__content-box__content">
+			  <p>Uploads are currently disabled.</p>
+			  <!--
+            <form id="new-story">
+              <div class="form-group" id="new-story-title-group">
+                <label for="new-story-title"><strong>Title <span style="color: #CC615C;">*</span></strong></label>
+                <input type="text" class="form-control" id="new-story-title" placeholder="Enter a title">
+              </div>
+              <div class="form-group" id="new-story-author-group">
+                <label for="new-story-author"><strong>Author <span style="color: #CC615C;">*</span></strong></label>
+                <input type="text" class="form-control" id="new-story-author">
+              </div>
+              <div class="form-group" id="new-story-summary-group">
+                <label for="new-story-summary"><strong>Summary <span style="color: #CC615C;">*</span></strong></label>
+                <textarea class="form-control" id="new-story-summary" rows="4" placeholder="Enter a summary"></textarea>
+              </div>
+              <div class="form-group" id="new-story-content-group">
+                <label for="new-story-content"><strong>Story <span style="color: #CC615C;">*</span></strong></label>
+                <textarea class="form-control" id="new-story-content" rows="6" placeholder="Enter your story"></textarea>
+              </div>
+              <div class="form-group" id="new-story-methods-group">
+                <label for="new-story-methods"><strong>Methods <span style="color: #CC615C;">*</span></strong></label>
+                <textarea class="form-control" id="new-story-methods" rows="6" placeholder="Enter your methods"></textarea>
+              </div>
+              
+              <div class="form-group">
+                <label for="new-story-upload-model"><strong>Upload Model</strong></label>
+                <div id="new-story-upload-model"></div>
+                <small id="modelHelp" class="form-text text-muted">Upload the model (checkpoint) you used to create this story - this should be a .t7 file.</small>
+              </div>
+              <div class="form-group">
+                <label for="new-story-upload-data"><strong>Upload Data</strong></label>
+                <div id="new-story-upload-data"></div>
+                <small id="dataHelp" class="form-text text-muted">Upload the text data you trained the model on - this should be a .txt file.</small>
+              </div>
+              
+              <button type="submit" class="btn btn-primary" onclick="sendData_new(event)" style="margin-top: 20px; margin-left: calc(50% - 50px); background-color: #d5a021!important; border-color: #d5a021!important;">Submit</button>
+
+            </form>
+			-->
+
+              <!--FROM ABOVE: <div class="g-recaptcha" data-sitekey="6LcdOQkUAAAAACd0_YTKj6-jHfjGfFSxNh6wnN9Z" style="margin-bottom: 40px; margin-top: 20px;"></div>-->
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ######################################################### -->
+      <!-- ################## Edit Story Page ###################### -->
+      <!-- ######################################################### -->
+
+      <div id="edit-error" class="edit-story" style="display: none;">
+
+        <div class="literai__story__content-box" style="min-height: 300px;">
+            <div class="literai__story__content-box__title">Error</div>
+            <div class="literai__story__content-box__summary-section">
+              <div class="literai__story__content-box__summary-section-text">You don't have permission to edit this story.</div>
+            </div>
+        </div>
+
+      </div>
+
+
+      <div id="edit" class="edit-story" style="display: none;">
+
+        <div class="literai__story__top-color-bar"></div>
+
+        <div class="literai__story__content-box">
+
+          <div class="literai__story__content-box__title">Edit Story</div>
+
+          <div class="literai__story__content-box__content">
+            <form id="edit-story">
+              <div class="form-group" id="edit-story-title-group">
+                <label for="edit-story-title"><strong>Title <span style="color: #CC615C;">*</span></strong></label>
+                <input type="text" class="form-control" id="edit-story-title" placeholder="Enter a title">
+              </div>
+              <div class="form-group" id="edit-story-author-group">
+                <label for="edit-story-author"><strong>Author <span style="color: #CC615C;">*</span></strong></label>
+                <input type="text" class="form-control" id="edit-story-author">
+              </div>
+              <div class="form-group" id="edit-story-summary-group">
+                <label for="edit-story-summary"><strong>Summary <span style="color: #CC615C;">*</span></strong></label>
+                <textarea class="form-control" id="edit-story-summary" rows="4" placeholder="Enter a summary"></textarea>
+              </div>
+              <div class="form-group" id="edit-story-content-group">
+                <label for="edit-story-content"><strong>Story <span style="color: #CC615C;">*</span></strong></label>
+                <textarea class="form-control" id="edit-story-content" rows="6" placeholder="Enter your story"></textarea>
+              </div>
+              <div class="form-group" id="edit-story-methods-group">
+                <label for="edit-story-methods"><strong>Methods <span style="color: #CC615C;">*</span></strong></label>
+                <textarea class="form-control" id="edit-story-methods" rows="6" placeholder="Enter your methods"></textarea>
+              </div>
+
+              <p style="padding: 30px; margin: 50px; overflow: hidden; background-color: #faf8f3; border: 1px solid #ede7d9; border-radius: 2px">
+                <strong>Note:</strong> If you have already uploaded a model and/or data file for this story you don't need to do so again. Uploading a file in the below fields will immediately replace the old file with your new one (even before you press submit). Only use these uploaders if you want to replace the files.
+                <br /><br />
+                <strong>Current Model File:</strong> <span id="edit-model-file-url"></span></br>
+                <strong>Current Data File:</strong> <span id="edit-data-file-url"></span>
+              </p>
+
+              <div class="form-group">
+                <label for="edit-story-upload-model"><strong>Upload Model</strong></label>
+                <div id="edit-story-upload-model"></div>
+                <small id="modelHelp" class="form-text text-muted">Upload the model (checkpoint) you used to create this story - this should be a .t7 file.</small>
+              </div>
+              <div class="form-group">
+                <label for="edit-story-upload-data"><strong>Upload Data</strong></label>
+                <div id="edit-story-upload-data"></div>
+                <small id="dataHelp" class="form-text text-muted">Upload the text data you trained the model on - this should be a .txt file.</small>
+              </div>
+
+              <button type="submit" class="btn btn-primary" onclick="sendData_edit(event)" style="margin-top: 20px; margin-left: calc(50% - 50px); background-color: #d5a021!important; border-color: #d5a021!important;">Submit</button>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ######################################################### -->
+      <!-- ################## Delete Story Page ###################### -->
+      <!-- ######################################################### -->
+
+      <div id="delete-error" class="delete-story" style="display: none;">
+
+        <div class="literai__story__content-box" style="min-height: 300px;">
+            <div class="literai__story__content-box__title">Error</div>
+            <div class="literai__story__content-box__summary-section">
+              <div class="literai__story__content-box__summary-section-text">You don't have permission to delete this story.</div>
+            </div>
+        </div>
+
+      </div>
+
+      <div id="delete" class="delete-story" style="display: none;">
+
+        <div class="literai__story__content-box" style="min-height: 300px;">
+            <div class="literai__story__content-box__title">Story Deleted</div>
+            <div class="literai__story__content-box__summary-section">
+              <div class="literai__story__content-box__summary-section-text">Return to the <a href="https://www.literai.com">home page</a></div>
+            </div>
+        </div>
+
+      </div>
+
+
+      <!-- ######################################################### -->
+      <!-- ################## Tutorial Page ###################### -->
+      <!-- ######################################################### -->
+
+
+      <div id="tutorial" class="tutorial" style="display: none;">
+
+        <div class="literai__story__top-color-bar"></div>
+
+        <div class="literai__story__content-box" style="min-height: 300px;">
+
+          <div class="literai__story__content-box__title">Tutorials</div>
+
+          <div class="literai__tutorial__content">
+
+            <div class="literai__story__content-box__summary-section">
+              <div class="literai__story__content-box__summary-section-text">
+                With recent advances in artificial intelligence it has become possible for anyone to easily create their very own story writing robot. There is something magical about watching a computer write out a story – it doesn't feel quite real.<br /><br />
+
+                Computers can write an infinite amount of text, but humans readers have a limited attention span. Human creativity is needed to train an AI and find the hidden gems within it's writing. You'll need to work collaboratively with your computer to create something truly special.<br /><br />
+
+                These tutorials were written to guide you through the simple steps needed to create your own artificial fiction to share on Literai.
+              </div>
+            </div>
+
+
+          <!-- Large Screen Tutorial Nav -->
+
+          <div class="literai__center-row hidden-sm-down literai__tutorial__tabs" style="margin-top: 30px; margin-bottom: 40px;">
+            <ul class="nav nav-pills literai__center-row-wrap" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#tutorial1" role="tab">Write a Story</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tutorial2" role="tab">Train an AI</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#how" role="tab">How it Works</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tips" role="tab">Tips & Tricks</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Small Screen Tutorial Nav -->
+
+          <div class="literai__center-row hidden-md-up" style="margin-top: 30px; margin-bottom: 40px;">
+            <ul class="nav nav-pills literai__center-column" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#tutorial1" role="tab">Write a Story</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tutorial2" role="tab">Train an AI</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#how" role="tab">How it Works</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#tips" role="tab">Tips & Tricks</a>
+              </li>
+            </ul>
+          </div>
+
+          </div>
+        </div>
+
+        <div class="literai__story__content-box" style="min-height: 300px;">
+          <div class="literai__tutorial__content">
+            
+            <div class="tab-content">
+
+              <!-- ######################### -->
+              <!-- Tutorial 1: Write a Story -->
+              <!-- ######################### -->
+
+              <div class="tab-pane active" id="tutorial1" role="tabpanel">
+
+                <h1 style="text-align: center; margin-bottom: 20px;">Write a Story</h1>
+
+                <p>In this tutorial, we’ll go through the steps to generate a computer written story on your personal computer. We recommend that you start with this tutorial before going on to the "Train an AI" tutorial. You can choose between a Mac or Windows tutorial from the tabs below.</p>
+
+                  <ul class="nav nav-tabs" style="margin: 50px -50px;">
+                    <li class="nav-item">
+                      <a class="nav-link active" data-toggle="tab" href="#mac1" role="tab" style="margin-left: 20px;">Mac</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#windows1" role="tab">Windows</a>
+                    </li>
+                  </ul>
+
+                <div class="tab-content">
+
+                  <!-- ######################### -->
+                  <!-- Tutorial 1: Mac Version   -->
+                  <!-- ######################### -->
+
+                  <div class="tab-pane active" id="mac1" role="tabpanel">
+
+                    <div id="accordion2" role="tablist" aria-multiselectable="true">
+                        <div class="card">
+                          <div class="card-header" role="tab" id="heading2">
+                            <h5 class="mb-0">
+                              <a data-toggle="collapse" data-parent="#accordion2" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                <strong>TL;DR Version</strong><div style="float: right; text-align: right; display: inline-block;">[+]</div>
+                              </a>
+                            </h5>
+                          </div>
+
+                          <div id="collapse2" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="card-block">
+                              This is a short summary of all of the commands and steps in this tutorial. This is mostly useful if you are going through it a second time and don't want to sift through the full details.<br /><br />
+
+                              <strong>1: Install Docker</strong><br />
+
+                              <strong>2: Download a Model</strong><br />
+
+                              <strong>3: Start Docker Container</strong><br />
+                              Terminal Window 1:
+                              <pre class="literai__tutorial__code">docker run -ti --rm --name literai crisbal/torch-rnn:base</pre>
+
+                              <strong>4: Copy Model to Docker Container</strong><br />
+                              Terminal Window 2:
+                              <pre class="literai__tutorial__code">docker cp ~/Desktop/<span style="color: #D5A021;">project</span>/ literai:root/torch-rnn/<span style="color: #D5A021;">project</span>/</pre>
+
+                              <strong>5: Write Text</strong><br />
+                              Terminal Window 1:
+                              <pre class="literai__tutorial__code">th sample.lua -checkpoint <span style="color: #D5A021;">project</span>/<span style="color: #D5A021;">project</span>.t7 -length 2000 -temperature 0.7 -gpu -1</pre>
+
+                              <p><span class="literai-code">exit<span></p>
+
+                              <strong>6: Upload Story to Literai</strong>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>        
+
+                      <div class="literai__tutorial__title">1: Install Docker</div>
+
+                      <p>The first step for this tutorial is to install Docker on your computer. You can find a link to download it here: <a href="https://docs.docker.com/docker-for-mac/">https://docs.docker.com/docker-for-mac/</a>.</p>
+
+                      <p>Docker is a tool that runs a simple virtual computer filled with the code we want already installed and ready to go. This makes the whole process easier since you will only need to install one program, instead of many.</p>
+
+                      <p>Once you have installed Docker open it from your Applications folder - you should see an icon for it on the menubar at the top of your mac. When you click on the icon it should say that Docker is running. Next you need to go to preferences and set the number of CPUs and Memory. Setting these values higher will make everything you run through Docker go faster. We recommend setting them to about 75-90% of what you have available.</p>
+
+                      <div style="margin: 20px 50px;"><img src="/dist/css/img/tutorial1-step1.png" class="img-fluid"></div>
+
+                      <div class="literai__tutorial__title">2: Download a Model</div>
+
+                      <p>For this tutorial we will take a premade artificial intelligence to write our story. In the next tutorial we'll go over how to train a custom one. The artificial intelligence we use on Literai is an LSTM Neural Network. This neural network is stored in a .t7 file and is typically referred to as a "model".</p>
+
+                      <p>Stories on Literai have models uploaded alongside them. Find a story you like on the site and download the model that generated it from the bottom of the page. Not all stories on Literai have models (some were generated using other AI techniques) but any that do will be marked with a model icon:</p>
+
+                      <div style="margin: 20px 50px;"><img src="/dist/css/img/tutorials-model-icon.png" class="img-fluid"></div>
+
+
+                      <p>At this point you will want to come up with a name for your project. Once you have your name chosen you should rename the model you downloaded to <span style="color: #D5A021; background-color: #4b4237; padding: 4px; border-radius: 4px;">project<span style="color: #ede7d9;">.t7</span></span> and place it in a new folder with the same name on your Desktop. Throughout this tutorial we are going to keep using the word <span style="color: #D5A021; background-color: #4b4237; padding: 4px; border-radius: 4px;">project</span> and you will need to replace it in all command line arguments with whatever word you chose to name your project.</p>
+
+
+                      <div class="literai__tutorial__title">3: Start a Docker Container</div>
+
+                      <p>Now that we have Docker running and our project set up we are ready to start! To get started we are going to need to open the Mac Application "Terminal". Terminal is a command line interface for your computer. It can be a little daunting if you've never used it before - but don't worry, you'll just be copying and pasting commands into it.</p>
+
+                      <div id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="card">
+                          <div class="card-header" role="tab" id="headingOne">
+                            <h5 class="mb-0">
+                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                <strong>Optional:</strong> How to use the Terminal<div style="float: right; text-align: right; display: inline-block;">[+]</div>
+                              </a>
+                            </h5>
+                          </div>
+
+                          <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="card-block">
+                              Terminal is a tool for running programs on your computer that don't have graphical interfaces. It can also be used to browse through files on your computer. You don't need to read this section to complete the tutorial, but it might help if you run into any trouble. Here are a few tips to help you when working in terminal:<br /><br />
+
+                              When the terminal loads up you will see what is called a command prompt. On my computer it looks like this: <span class="literai-code">Anahita:~ Myles$</span>. This tells you the folder your terminal is currently looking at (Anahita:~ stands for the home directory of my computer, named Anahita), and the user you are logged in as (Myles).<br /><br />
+
+                               You type commands after the command prompt and hit return to execute them (starting a process). Note that the mouse doesn't work in the terminal at all. You will need to use the arrow keys to go back and forward within the line you are writing. You can still use the mouse to select text to copy and can paste using Cmd+C and Cmd+V as normal. Pressing the up arrow will conveniently go through commands you have previously typed in.<br /><br />
+
+
+                               Once you type in your command and press enter a process will begin. When a process is running the command prompt won't appear and various lines of text might appear. When a process is finished you will see the command prompt again and you will now be able to enter a new command. If you want to exit a process while it is still running try typing Ctrl+C (sometimes you need to do this multiple times).<br /><br />
+
+                               One simple command is <span class="literai-code">ls</span>. By typing ls, you are asking for a list of all of the files and folders inside the folder you are currently looking at.<br /><br />
+
+                               To move to a folder inside the folder you are already looking at you can use <span class="literai-code">cd Folder-Name</span> (replace "Folder-Name" with the name of the folder you want to move to). To go up a level (instead of down) you can type <span class="literai-code">cd ..</span>. To go back to your home directory you can also use the shortcut command <span class="literai-code">cd ~</span>.<br /><br />
+
+                               At first glance this moving between folders might not look very useful since you could just use the Finder. However, in this tutorial we are using a Docker Container (sort of like a mini virtual computer inside our computer), which we can't look at using finder. You can use the ls and cd commands to look around inside your Docker Container - allowing you to verify that everything you did in the tutorial was correct.<br /><br />
+
+                               There are, of course, many more commands. In this tutorial we will mostly be using the command line to do things like: start a Docker Container, copy files to and from Docker, and run programs within Docker.<br /><br />
+
+                              Want to know more about how to use the terminal? Check out <a href="http://lifehacker.com/5633909/who-needs-a-mouse-learn-to-use-the-command-line-for-almost-anything">this nice guide on Lifehacker</a>.
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>                      
+
+                      <p>Our first step is to start up a Docker Container with all of the packages and code we want. We will be using a program called <a href="https://github.com/jcjohnson/torch-rnn">torch-rnn</a> written in the programming language Lua by Justin Johnson (based on <a href="https://github.com/karpathy/char-rnn">char-rnn</a> by Andrej Karpathy). Cristian Baldi has created a <a href="https://github.com/crisbal/docker-torch-rnn">Docker Image</a> we can download automatically that has the program and all of its dependencies set up ready to go. (Note: the initial download is 500MB).</p>
+
+                      <p>All you have to do is paste the following code into the terminal and hit return: </p>
+
+                      <pre class="literai__tutorial__code">docker run -ti --rm --name literai crisbal/torch-rnn:base</pre>
+
+                      <p>It will take a few moments to download everything you need. When it is done the command prompt will come up again indicating that the process finished correctly. Now the terminal is controlling the inside of your Docker Container. If something went wrong make sure your internet connection is working and that Docker is running. In the future, when you do this step again it will happen very quickly, as it won't need to download anything.</p>
+
+                      <div style="margin: 20px 50px;"><img src="/dist/css/img/tutorial1-step3.png" class="img-fluid"></div>
+
+                      <div class="literai__tutorial__title">4: Copy Model into Docker Container</div>
+
+                      <p>The next step is to copy the model from your computer into the Docker Container. To do this you need to open a new Terminal window (Cmd + N or right click on the terminal icon in the dock and choose "New Window"). We need a second window as our first window is now controlling the Docker Container.</p>
+
+                      <p>Paste the following command into the second terminal window and hit return to copy the folder you made of your model across. If the folder with your model isn't on your Desktop you will need to modify the path in the code to link to the right place. Remember to replace <span style="color: #D5A021; background-color: #4b4237; padding: 4px; border-radius: 4px;">project</span> with your own project name.</p>
+
+                      <pre class="literai__tutorial__code">docker cp ~/Desktop/<span style="color: #D5A021;">project</span>/ literai:root/torch-rnn/<span style="color: #D5A021;">project</span>/</pre>
+
+                      <div style="margin: 20px 50px;"><img src="/dist/css/img/tutorial1-step4.png" class="img-fluid"></div>
+
+                      <p><strong>Optional:</strong> To check that the file was correctly copied, go back to your first terminal window, type <span class="literai-code">cd torch-rnn</span> and hit enter, then type <span class="literai-code">ls</span> and hit enter. You should see a list of files/folders that includes the one you just copied over. Now type <span class="literai-code">cd ..</span> to go back to where you were.</p>
+
+                      <div class="literai__tutorial__title">5: Write Text</div>
+
+                      <p>Now that everything is set up we are finally ready to write some text! For this step we need to go back to the first terminal window where we will copy and paste the command below:</p>
+
+                      <pre class="literai__tutorial__code">th sample.lua -checkpoint <span style="color: #D5A021;">project</span>/<span style="color: #D5A021;">project</span>.t7 -length 2000 -temperature 0.7 -gpu -1</pre>
+
+                      <p>After a couple of minutes the computer should print out 2000 characters of text! Your AI has just written entirely novel literature! You can copy this text out of the terminal into a text editor (like Word or Google Docs).</p>
+
+                      <div style="margin: 20px 50px;"><img src="/dist/css/img/tutorial1-step5.png" class="img-fluid"></div>
+
+                      <p>To create more text, simply paste the command again (or hit the up arrow in the terminal to auto-populate it). You'll notice in the command is the phrase <span class="literai-code">-length 2000</span> You can modify this number to be bigger or smaller to see more or less text. In practice you can sometimes get better results by generating lots of shorter snippets rather than a really long one. There are other parameters you can tweak here to get better results. The tips and tricks tutorial goes over these in more detail.</p>
+
+                      <p>When you are done generating text it is important to enter one last command into the first terminal window:</p>
+
+                      <p><span class="literai-code">exit<span></p>
+
+                      <p>This will close down the Docker Container and will delete everything on it. Importantly, this will also free up the name "literai" which we gave to the container in step 3. If you forget to exit and then come back to write more fiction in the future the code we have will cause an error, since the name "literai" will still be taken. You can solve this by using a different name (eg literai2) in all of the commands, but for simplicity remember to type exit!</p>
+
+                      <div class="literai__tutorial__title">6: Upload Your Story to Literai</div>
+
+                      <p>Now that you've generated text with your AI you can complete a story and upload it to Literai to share with the world.</p>
+
+                      <p>This is your chance to be creative in selecting and editing the writing your AI produces. Find the funny interesting things it says and discard the others. On literai we strongly encourage quality over quantity. Computers can write infinite amounts of fiction, but humans only really want to read a finite amount, usually no more than a page of writing. Keep it short and grab the best stuff you can. We discourage directly editing the words the AI wrote, but fixing minor spelling mistakes, spacing issues, or renaming characters to create continuity is fine.</p>
+
+                      <p>When your story is complete go to the <a href="https://www.literai.com/new/">Upload Story</a> page on Literai and enter the story, a short synopsis about the story, and a description of how you created it under Methods. Remember to upload the model (.t7) file with your story, so other people can download it to write more like it. You can ignore the upload data section for now.</p>
+
+                      <p>You've now successfully completed the first tutorial! Go to the Train an AI tutorial for the next steps.</p>
+
+                  </div>
+
+                  <!-- ########################### -->
+                  <!-- Tutorial 1: Windows Version -->
+                  <!-- ########################### -->
+
+                  <div class="tab-pane" id="windows1" role="tabpanel">
+
+                      <div id="accordion2w" role="tablist" aria-multiselectable="true">
+                        <div class="card">
+
+                          <div class="card-header" role="tab" id="heading2w">
+                            <h5 class="mb-0">
+                              <a data-toggle="collapse" data-parent="#accordion2w" href="#collapse2w" aria-expanded="false" aria-controls="collapse2w">
+                                <strong>TL;DR Version</strong><div style="float: right; text-align: right; display: inline-block;">[+]</div>
+                              </a>
+                            </h5>
+                          </div>
+
+                          <div id="collapse2w" class="collapse" role="tabpanel" aria-labelledby="heading2w">
+                            <div class="card-block">
+                              This is a short summary of all of the commands and steps in this tutorial. This is mostly useful if you are going through it a second time and don't want to sift through the full details.<br /><br />
+
+                              <strong>1: Install Docker</strong><br />
+
+                              <strong>2: Download a Model</strong><br />
+
+                              <strong>3: Start Docker Container</strong><br />
+                              Command Prompt 1:
+                              <pre class="literai__tutorial__code">docker run -ti --rm --name literai crisbal/torch-rnn:base</pre>
+
+                              <strong>4: Copy Model to Docker Container</strong><br />
+                              Command Prompt 2:
+                              <pre class="literai__tutorial__code">docker cp C:\Users\Admin\Documents\<span style="color: #D5A021;">project</span>\ literai:root/torch-rnn/<span style="color: #D5A021;">project</span>/</pre>
+
+                              <strong>5: Write Text</strong><br />
+                              Command Prompt 1: (right click on the line to paste)
+                              <pre class="literai__tutorial__code">th sample.lua -checkpoint <span style="color: #D5A021;">project</span>/<span style="color: #D5A021;">project</span>.t7 -length 2000 -temperature 0.7 -gpu -1</pre>
+
+                              <p><span class="literai-code">exit<span></p>
+
+                              <strong>6: Upload Story to Literai</strong>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>   
+
+                    <div class="literai__tutorial__title">1: Install Docker</div>
+
+                    <p>The first step for this tutorial is to install Docker on your computer. You can find a link to download it here: <a href="https://docs.docker.com/docker-for-windows/">https://docs.docker.com/docker-for-windows/</a>.</p>
+
+                    <p>Docker is a tool that runs a simple virtual computer filled with the code we want already installed and ready to go. This makes the whole process easier since you will only need to install one program, instead of many.</p>
+
+                    <p>Please note that Docker requires Hyper-V which only available on Windows Professional and up (not on Windows Home Edition). I ran into this problem on my own PC when making this tutorial. The only solution I know is to upgrade to Windows Pro for $100 - not fun, but it works. Otherwise, use the Mac tutorial on a Mac or Linux machine. [Update: Apparently it is possible to get docker to run on Windows Home edition <a href="http://www.westerndevs.com/getting-docker-running-on-windows-10/">using Virtual Box</a>]</p>
+
+                    <p>Once you have installed Docker you should see an icon for it in the bottom right of your taskbar. When you click on the icon it should say that Docker is running. Next you need to go to settings and set the number of CPUs and Memory. Setting these values higher will make everything you run through Docker go faster. We recommend setting them to about 75-90% of what you have available.</p>
+
+                    <!--<div style="margin: 20px 50px;"><img src="/dist/css/img/tutorial1-step1.png" class="img-fluid"></div>-->
+
+                    <div class="literai__tutorial__title">2: Download a Model</div>
+
+                    <p>For this tutorial we will take a premade artificial intelligence to write our story. In the next tutorial we'll go over how to train a custom one. The artificial intelligence we use on Literai is an LSTM Neural Network. This neural network is stored in a .t7 file and is typically referred to as a "model".</p>
+
+                    <p>Stories on Literai have models uploaded alongside them. Find a story you like on the site and download the model that generated it from the bottom of the page. Not all stories on Literai have models (some were generated using other AI techniques) but any that do will be marked with a model icon:</p>
+
+                    <div style="margin: 20px 50px;"><img src="/dist/css/img/tutorials-model-icon.png" class="img-fluid"></div>
+
+                    <p>At this point you will want to come up with a name for your project. Once you have your name chosen you should rename the model you downloaded to <span style="color: #D5A021; background-color: #4b4237; padding: 4px; border-radius: 4px;">project<span style="color: #ede7d9;">.t7</span></span> and place it in a new folder with the same name in your Documents folder. Throughout this tutorial we are going to keep using the word <span style="color: #D5A021; background-color: #4b4237; padding: 4px; border-radius: 4px;">project</span> and you will need to replace it in all command line arguments with whatever word you chose to name your project.</p>
+
+
+                    <div class="literai__tutorial__title">3: Start a Docker Container</div>
+
+                    <p>Now that we have Docker running and our project set up we are ready to start! To get started we are going to need to open the Windows program "Command Prompt". To open this go to the start menu and search for cmd. Command Prompt is a command line interface for your computer. It can be a little daunting if you've never used it before - but don't worry, you'll just be copying and pasting commands into it.</p>
+
+                    <p>Our first step is to start up a Docker Container with all of the packages and code we want. We will be using a program called <a href="https://github.com/jcjohnson/torch-rnn">torch-rnn</a> written in the programming language Lua by Justin Johnson (based on <a href="https://github.com/karpathy/char-rnn">char-rnn</a> by Andrej Karpathy). Cristian Baldi has created a <a href="https://github.com/crisbal/docker-torch-rnn">Docker Image</a> we can download automatically that has the program and all of its dependencies set up ready to go. (Note: the initial download is 500MB)</p>
+
+                    <p>All you have to do is paste the following code into the command prompt and hit return:</p>
+
+                    <pre class="literai__tutorial__code">docker run -ti --rm --name literai crisbal/torch-rnn:base</pre>
+
+                    <p>It will take a few moments to download everything you need. When it is done the command prompt will come up again indicating that the process finished correctly. Now the command prompt is controlling the inside of your Docker Container. If something went wrong make sure your internet connection is working and that Docker is running. In the future, when you do this step again it will happen very quickly, as it won't need to download anything.</p>
+
+                    <!--<div style="margin: 20px 50px;"><img src="/dist/css/img/tutorial1-step3.png" class="img-fluid"></div>-->
+
+                    <div class="literai__tutorial__title">4: Copy Model into Docker Container</div>
+
+                    <p>The next step is to copy the model from your computer into the Docker Container. To do this you need to open a new Command Prompt window (go to the start menu, search for cmd, and open it like before). We need a second window as our first window is now controlling the Docker Container.</p>
+
+                    <p>Paste the following command into the second command prompt window and hit return to copy the folder you made of your model across. If the folder with your model isn't in your Documents folder you will need to modify the path in the code to link to the right place. Remember to replace <span style="color: #D5A021; background-color: #4b4237; padding: 4px; border-radius: 4px;">project</span> with your own project name.</p>
+
+                    <pre class="literai__tutorial__code">docker cp C:\Users\Admin\Documents\<span style="color: #D5A021;">project</span>\ literai:root/torch-rnn/<span style="color: #D5A021;">project</span>/</pre>
+
+                    <!--<div style="margin: 20px 50px;"><img src="/dist/css/img/tutorial1-step4.png" class="img-fluid"></div>-->
+
+                    <div class="literai__tutorial__title">5: Write Text</div>
+
+                    <p>Now that everything is set up we are finally ready to write some text! For this step we need to go back to the first command prompt where we will copy and paste the command below. Note that when you are working with the command prompt controlling the docker container pasting with Ctrl+V won't work - instead you can right click on the line where you want to paste.</p>
+
+                    <pre class="literai__tutorial__code">th sample.lua -checkpoint <span style="color: #D5A021;">project</span>/<span style="color: #D5A021;">project</span>.t7 -length 2000 -temperature 0.7 -gpu -1</pre>
+
+                    <p>After a couple of minutes the computer should print out 2000 characters of text! Your AI has just written entirely novel literature! You can copy this text out of the comand prompt into a text editor (like Word or Google Docs).</p>
+
+                    <!--<div style="margin: 20px 50px;"><img src="/dist/css/img/tutorial1-step5.png" class="img-fluid"></div>-->
+
+                    <p>To create more text, simply paste the command again (or hit the up arrow in the command prompt to auto-populate it). You'll notice in the command is the phrase <span class="literai-code">-length 2000</span> You can modify this number to be bigger or smaller to see more or less text. In practice you can sometimes get better results by generating lots of shorter snippets rather than a really long one. There are other parameters you can tweak here to get better results. The tips and tricks tutorial goes over these in more detail.</p>
+
+                    <p>When you are done generating text it is important to enter one last command into the first command prompt window:</p>
+
+                    <p><span class="literai-code">exit<span></p>
+
+                    <p>This will close down the Docker Container and will delete everything on it. Importantly, this will also free up the name "literai" which we gave to the container in step 3. If you forget to exit and then come back to write more fiction in the future the code we have will cause an error, since the name "literai" will still be taken. You can solve this by using a different name (eg literai2) in all of the commands, but for simplicity remember to type exit!</p>
+
+                    <div class="literai__tutorial__title">6: Upload Your Story to Literai</div>
+
+                    <p>Now that you've generated text with your AI you can complete a story and upload it to Literai to share with the world.</p>
+
+                    <p>This is your chance to be creative in selecting and editing the writing your AI produces. Find the funny interesting things it says and discard the others. On literai we strongly encourage quality over quantity. Computers can write infinite amounts of fiction, but humans only really want to read a finite amount, usually no more than a page of writing. Keep it short and grab the best stuff you can. We discourage directly editing the words the AI wrote, but fixing minor spelling mistakes, spacing issues, or renaming characters to create continuity is fine.</p>
+
+                    <p>When your story is complete go to the <a href="https://www.literai.com/new/">Upload Story</a> page on Literai and enter the story, a short synopsis about the story, and a description of how you created it under Methods. Remember to upload the model (.t7) file with your story, so other people can download it to write more like it. You can ignore the upload data section for now.</p>
+
+                    <p>You've now successfully completed the first tutorial! Go to the Train an AI tutorial for the next steps.</p>
+
+                  </div>
+
+
+                </div>
+              </div>
+
+              <!-- ######################### -->
+              <!-- Tutorial 2: Train an AI -->
+              <!-- ######################### -->
+
+              <div class="tab-pane" id="tutorial2" role="tabpanel">
+
+                <h1 style="text-align: center; margin-bottom: 20px;">Train an AI</h1>
+
+                <p>In the first tutorial we went through how to write fiction using a premade artificial intelligence. In this tutorial we go through how to train your own custom AI. You will need to collect a corpus of literature and then train your neural network to imitate it. The training process can take hours or days to complete, so make sure you do this in a place where you can leave your computer uninterrupted for a while.</p>
+
+                <p>Your AI will write in the same style as the literature you give it to train on. If you give it Shakespeare, then it will write like Shakespeare. This gives you incredible creative power to craft different AIs with different voices.</p>
+
+                <p>As in the last tutorial, you can choose between a Mac or Windows tutorial from the tabs below.</p>
+
+                  <ul class="nav nav-tabs" style="margin: 50px -50px;">
+                    <li class="nav-item">
+                      <a class="nav-link active" data-toggle="tab" href="#mac2" role="tab" style="margin-left: 20px;">Mac</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#windows2" role="tab">Windows</a>
+                    </li>
+                  </ul>
+
+                  <!-- ####################### -->
+                  <!-- Tutorial 2: Mac Version -->
+                  <!-- ####################### -->
+
+
+                  <div class="tab-content">
+                    <div class="tab-pane active" id="mac2" role="tabpanel">
+
+                      <div id="accordion3" role="tablist" aria-multiselectable="true">
+                        <div class="card">
+                          <div class="card-header" role="tab" id="heading3">
+                            <h5 class="mb-0">
+                              <a data-toggle="collapse" data-parent="#accordion3" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                <strong>TL;DR Version</strong><div style="float: right; text-align: right; display: inline-block;">[+]</div>
+                              </a>
+                            </h5>
+                          </div>
+
+                          <div id="collapse3" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="card-block">
+                              This is a short summary of all of the commands and steps in this tutorial. This is mostly useful if you are going through it a second time and don't want to sift through the full details.<br /><br />
+
+                              <strong>1: Install Docker</strong><br />
+
+                              <strong>2: Create a Data File</strong><br />
+                              1-3MB will train in hours, 3-10MB will train in days, 10+MB will train in weeks on a standard laptop.
+                              <br />
+
+                              <strong>3: Start Docker Container</strong><br />
+                              Terminal Window 1:
+                              <pre class="literai__tutorial__code">docker run -ti --rm --name literai crisbal/torch-rnn:base</pre>
+
+                              <strong>4: Copy Data to Docker Container</strong><br />
+                              Terminal Window 2:
+                              <pre class="literai__tutorial__code">docker cp ~/Desktop/<span style="color: #D5A021;">project</span>/ literai:root/torch-rnn/data/</pre>
+
+                              <strong>5: Preprocess Data</strong><br />
+                              Terminal Window 1:
+                              <pre class="literai__tutorial__code">python scripts/preprocess.py --input_txt data/<span style="color: #D5A021;">project</span>/<span style="color: #D5A021;">project</span>.txt --output_h5 data/<span style="color: #D5A021;">project</span>.h5 --output_json data/<span style="color: #D5A021;">project</span>.json</pre>
+
+                              <strong>6: Train Your Model</strong><br />
+                              Terminal Window 1:
+                              <pre class="literai__tutorial__code">th train.lua -input_h5 data/<span style="color: #D5A021;">project</span>.h5 -input_json data/<span style="color: #D5A021;">project</span>.json -checkpoint_name output/checkpoint -rnn_size 512 -num_layers 2 -dropout 0.5 -gpu -1</pre>
+
+                              <strong>7: Save Model to Computer</strong><br />
+                              Terminal Window 2:
+                              <pre class="literai__tutorial__code">docker cp literai:root/torch-rnn/output/ ~/Desktop/</pre>
+
+                              <strong>8: Write Text</strong><br />
+                              Terminal Window 1:
+                              <pre class="literai__tutorial__code">th sample.lua -checkpoint output/checkpoint_<span style="color: #D5A021;">XX</span>000.t7 -length 2000 -temperature 0.7 -gpu -1</pre>
+                              Terminal Window 1:
+                              <p><span class="literai-code">exit<span></p>
+
+                              <strong>9: Upload Story to Literai</strong>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>         
+
+                      <div class="literai__tutorial__title">1: Install Docker</div>
+
+                      <p>If you completed this as a part of the tutorial 1, you can skip this step.</p>
+
+                      <p>If you went straight to this tutorial the first step is to install Docker on your computer. You can find a link to download it here: <a href="https://docs.docker.com/docker-for-mac/">https://docs.docker.com/docker-for-mac/</a>.</p>
+
+                      <p>Docker is a tool that runs a simple virtual computer filled with the code we want already installed and ready to go. This makes the whole process easier since you will only need to install one program, instead of many.</p>
+
+                      <p>Once you have installed Docker open it from your Applications folder - you should see an icon for it on the menubar at the top of your mac. When you click on the icon it should say that Docker is running. Next you need to go to preferences and set the number of CPUs and Memory. Setting these values higher will make everything you run through Docker go faster. We recommend setting them to about 75-90% of what you have available.</p>
+
+                      <div style="margin: 20px 50px;"><img src="/dist/css/img/tutorial2-step1.png" class="img-fluid"></div>
+
+
+                      <div class="literai__tutorial__title">2: Create a Data File</div>
+
+                      <p>Creating an artificial intelligence that can write in English would seem to be an incredibly difficult challenge - but neural networks have made it incredibly easy. Neural networks learn how to do things by being given a large number of examples and slowly teaching themselves to imitate these styles.</p>
+
+                      <p>The neural network you create in this tutorial won't know a single thing about spelling, punctuation, characters, plot, or even words. It will have to learn all of this from scratch from the literature you give it to learn on. Think of it like a child who learns to write by reading from a library with no tutor.</p>
+
+                      <p>Choosing which books to give your AI is an exciting creative endeavor. The literature it learns to write on will teach it not just the basics of the language, but will also give it a specific "voice". You could give it only literature from one author, or one genre, or get it to imitate an interesting combination of works. The possibilities are endless. It doesn't even need to be in English. Within hours a neural network could be writing in a foreign language more fluently than you'll ever be able to.</p>
+
+                      <p>For your first AI choose a simple topic, perhaps an author or book series you want to imitate. You will need to open up a simple text editor (eg. TextEdit - a program installed on every mac computer). Copy and paste the full text from the writing you want into the text file. Don't worry about leaving spacing between each book, just paste them in one after another.</p>
+
+                      <p>Obviously you will need to find the text for the literature you want online. Google can get you most of the way there, but be sure to also check out Project <a href="https://www.gutenberg.org">Gutenberg</a>, <a href="http://www.imsdb.com">IMSDB</a>, and <a href="http://www.mldb.org">MLDB</a>. Also check out the data files attached to stories on Literai - you can use them to build off of the work others have already done bringing writings together. You can find stories that have data files attached on Literai by looking for the data icon:</p>
+
+                      <div style="margin: 20px 50px;"><img src="/dist/css/img/tutorials-data-icon.png" class="img-fluid"></div>
+
+                      <p>At this point you will want to come up with a name for your project. Once you have your name chosen you should save your text file as <span style="color: #D5A021; background-color: #4b4237; padding: 4px; border-radius: 4px;">project<span style="color: #ede7d9;">.txt</span></span> and place it in a new folder with the same name on your Desktop. Throughout this tutorial we are going to keep using the word <span style="color: #D5A021; background-color: #4b4237; padding: 4px; border-radius: 4px;">project</span> and you will need to replace it in all command line arguments with whatever word you chose to name your project.</p>
+
+                      <p>The larger your dataset the better your AI will be at writing, but the longer it will take to learn. As a general rule of thumb about 1MB (200,000 words) is the minimum size you would want to train on. Anything in the 3-10MB range is pretty ideal and will take a reasonable amount of time to run. Large datasets of 10s or 100s of MBs can create incredibly good writers, but they might take weeks or even months to train on a personal computer.</p>
+
+
+                      <div class="literai__tutorial__title">3: Start Docker Container</div>
+
+                      <p>If you've already completed the first tutorial, this step is the same as last time - you can skip to copying the command below into the Terminal. If you haven't completed the first tutorial then read on.</p>
+
+                      <p>Now that we have Docker running and our project set up we are ready to start! To get started we are going to need to open the Mac Application "Terminal". Terminal is a command line interface for your computer. It can be a little daunting if you've never used it before - but don't worry, you'll just be copying and pasting commands into it.</p>
+                     
+
+                      <p>Our first step is to start up a Docker Container with all of the packages and code we want. We will be using a program called <a href="https://github.com/jcjohnson/torch-rnn">torch-rnn</a> written in the programming language Lua by Justin Johnson (based on <a href="https://github.com/karpathy/char-rnn">char-rnn</a> by Andrej Karpathy). Cristian Baldi has created a <a href="https://github.com/crisbal/docker-torch-rnn">Docker Image</a> we can download automatically that has the program and all of its dependencies set up ready to go. (Note: the initial download is 500MB)</p>
+
+                      <p>All you have to do is paste the following code into the terminal and hit return:</p>
+
+                      <pre class="literai__tutorial__code">docker run -ti --rm --name literai crisbal/torch-rnn:base</pre>
+
+                      <p>It will take a few moments to download everything you need. When it is done the command prompt will come up again indicating that the process finished correctly. Now the terminal is controlling the inside of your Docker Container. If something went wrong make sure your internet connection is working and that Docker is running. In the future, when you do this step again it will happen very quickly, as it won't need to download anything.</p>
+
+                      <div style="margin: 20px 50px;"><img src="/dist/css/img/tutorial2-step3.png" class="img-fluid"></div>
+
+                      <div class="literai__tutorial__title">4: Copy Data into Docker Container</div>
+
+                      <p>The next step is to copy the data file from your computer into the Docker Container. To do this you need to open a new Terminal window (Cmd + N or right click on the terminal icon in the dock and choose "New Window"). We need a second window as our first window is now controlling the Docker Container.</p>
+
+                      <p>Paste the following command into the second terminal window and hit return to copy the folder you made across. If your folder with your data file (project.txt) isn't on the Desktop you will need to modify the path in the code to link to the right place. Remember to replace project with your own project name.</p>
+
+                      <pre class="literai__tutorial__code">docker cp ~/Desktop/<span style="color: #D5A021;">project</span>/ literai:root/torch-rnn/data/</pre>
+
+                      <div style="margin: 20px 50px;"><img src="/dist/css/img/tutorial2-step4.png" class="img-fluid"></div>
+
+                      <p><strong>Optional:</strong> To check that the folder was correctly copied, go back to your first terminal window, type <span class="literai-code">cd torch-rnn/data/</span> and hit enter, then type <span class="literai-code">ls</span> and hit enter. You should see a list of files/folders that includes the one you just copied over. Now type <span class="literai-code">cd ..</span> and hit enter <strong>two times</strong> to go back to where you were.</p>
+                      
+                      <div class="literai__tutorial__title">5: Preprocess Data</div>
+
+                      <p>Before we can train our neural network we need to run a couple of processes to get the data ready for it. There are some advanced parameters you might want to tweak at this step (see the tips and tricks section), but for the most part you'll probably want to use the default command below.</p>
+
+                      <p>Go to the first Terminal window (the one controlling your Docker Container), and enter the following command before pressing enter:</p>
+
+                      <pre class="literai__tutorial__code">python scripts/preprocess.py --input_txt data/<span style="color: #D5A021;">project</span>/<span style="color: #D5A021;">project</span>.txt --output_h5 data/<span style="color: #D5A021;">project</span>.h5 --output_json data/<span style="color: #D5A021;">project</span>.json</pre>
+
+                      <div style="margin: 20px 50px;"><img src="/dist/css/img/tutorial2-step5.png" class="img-fluid"></div>
+
+                      <p><strong>Optional:</strong> To check that the data files were processed correctly type <span class="literai-code">cd torch-rnn/data/</span> into the first terminal window and hit enter, then type <span class="literai-code">ls</span> and hit enter. You should see a list of files/folders that includes <span style="color: #D5A021;">project</span>.h5 and <span style="color: #D5A021;">project</span>.json. Now type <span class="literai-code">cd ..</span> and hit enter to go back to where you were.</p>
+
+                      <div class="literai__tutorial__title">6: Train Your Model</div>
+
+                      <p>This is the exciting (and long) part, where we train your neural network to write. Before we do that though we should make sure your computer won't shutdown or go to sleep while the process is running. If you are running this on a laptop make sure it is plugged in and that you are in a place where the laptop can stay open for a long time. Secondly, go to "System Preferences" and enter the "Energy Saver" mode. For both the "Battery" and "Power Adapter" tabs, move the slider for "turn display off after" to "never". This will prevent your computer from going to sleep. Make sure to put it back to normal after you are done with this tutorial.</p> 
+
+                      <p>Now that you are ready to train your neural network, go to the first Terminal Window (the one controlling the Docker Container), paste the following command and hit enter:</p>
+
+                      <pre class="literai__tutorial__code">th train.lua -input_h5 data/<span style="color: #D5A021;">project</span>.h5 -input_json data/<span style="color: #D5A021;">project</span>.json -checkpoint_name output/checkpoint -rnn_size 512 -num_layers 2 -dropout 0.5 -gpu -1</pre>
+
+                      <p>You'll notice a few different parameters in the command above. See the tips and tricks section for more information on how to tweak these to get better results. In short though, the larger the rnn_size is the larger your neural network's brain is. In general you should increase rnn_size only when working with larger data files. Doing so will give you much better results but can drastically increase the time it takes to learn.</p>
+
+                      <div style="margin: 20px 50px;"><img src="/dist/css/img/tutorial2-step6a.png" class="img-fluid"></div>
+
+                      <p>Now that the command is running you will see lines output to the terminal one after another. This is showing you information about each iteration of the model's learning - the value on the right (loss =) is an evaluation metric which indicates how good your model is. The smaller this number is the better. You'll notice it very slowly going down over time. Every 1000 iterations a copy of your model will be saved (a checkpoint) and a special evaluation will be done to see how good it is. Any checkpoint can be used to write, so you can actually see how your AI is getting better over time.</p>
+
+                      <div style="margin: 20px 50px;"><img src="/dist/css/img/tutorial2-step6b.png" class="img-fluid"></div>
+
+                      <p>This process will take a very long time (hours to days depending on your data and parameters), so you can just leave it running. If you decide to end the run prematurely you can do so by hitting Ctrl+C. You can then just take the last checkpoint created for the next step.</p>
+
+                      <div class="literai__tutorial__title">7: Save Model to Your Computer</div>
+
+                      <p>With the training now completed, you now have a neural network (model) capable of writing for you! The first thing you'll want to do is copy this model from the Docker Container on to your computer.
+
+                      Go to the second terminal window (that we used in step 4), paste the following command and hit enter:</p>
+
+                      <pre class="literai__tutorial__code">docker cp literai:root/torch-rnn/output/ ~/Desktop/</pre>
+
+                      <div style="margin: 20px 50px;"><img src="/dist/css/img/tutorial2-step7.png" class="img-fluid"></div>
+
+                      <p>When this is done running you will see a new folder on your desktop called "output". Rename it to your <span style="color: #D5A021;">project</span> name. Inside there will be a number of files with the name "checkpoint_XX000.t7" and "checkpoint_XX000.json" where XX is a specific number. Take the .t7 file with the highest number and rename it <span style="color: #D5A021;">project</span>.t7 . This file is your completely trained model. It can now be shared and used as the input (step 2) of the first tutorial.</p>
+
+                      <p>But since we've already got a Docker Container running we don't need to start that all over again, instead we can jump straight to writing text.</p>
+
+                      <div class="literai__tutorial__title">8: Write Text</div>
+
+                      <p>Now that everything is set up we are finally ready to write some text! For this step we need to go back to the first terminal window where we will copy and paste the command below. You will need to replace the XX in the checkpoint name with the number from the actual checkpoint file you are using (note that you only renamed it on your computer, not within the docker container).</p>
+
+                      <pre class="literai__tutorial__code">th sample.lua -checkpoint output/checkpoint_<span style="color: #D5A021;">XX</span>000.t7 -length 2000 -temperature 0.7 -gpu -1</pre>
+
+                      <p>After a couple of minutes the computer should print out 2000 characters of text! Your AI has just written entirely novel literature! You can copy this text out of the terminal into a text editor (like Word or Google Docs).</p>
+
+                      <div style="margin: 20px 50px;"><img src="/dist/css/img/tutorial2-step8.png" class="img-fluid"></div>
+
+                      <p>To create more text, simply paste the command again (or hit the up arrow in the terminal to auto-populate it). You'll notice in the command is the phrase <span class="literai-code">-length 2000</span> You can modify this number to be bigger or smaller to see more or less text. In practice you can sometimes get better results by generating lots of shorter snippets rather than a really long one. There are other parameters you can tweak here to get better results. The tips and tricks tutorial goes over these in more detail.</p>
+
+                      <p>When you are done generating text it is important to enter one last command into the first terminal window:</p>
+
+                      <p><span class="literai-code">exit<span></p>
+
+                      <p>This will close down the Docker Container and will delete everything on it. Importantly, this will also free up the name "literai" which we gave to the container in step 3. If you forget to exit and then come back to write more fiction in the future the code we have will cause an error, since the name "literai" will still be taken. You can solve this by using a different name (eg literai2) in all of the commands, but for simplicity remember to type exit!</p>
+
+                      <div class="literai__tutorial__title">9: Upload Your Story to Literai</div>
+
+                      <p>Now that you've generated text with your AI you can complete a story and upload it to Literai to share with the world.</p>
+
+                      <p>This is your chance to be creative in selecting and editing the writing your AI produces. Find the funny interesting things it says and discard the others. On literai we strongly encourage quality over quantity. Computers can write infinite amounts of fiction, but humans only really want to read a finite amount, usually no more than a page of writing. Keep it short and grab the best stuff you can. We discourage directly editing the words the AI wrote, but fixing minor spelling mistakes, spacing issues, or renaming characters to create continuity is fine.</p>
+
+                      <p>When your story is complete go to the <a href="https://www.literai.com/new/">Upload Story</a> page on Literai and enter the story, a short synopsis about the story, and a description of how you created it under Methods. Remember to upload the model (.t7) file with your story, so other people can download it to write more like it. You should also upload your data (.txt) file so other people can build off of the literature you collected.</p>
+
+                      <p>You've now successfully completed the second tutorial! Next you can read the How it Works or Tips and Tricks sections. Experiment with different literature and come up with some exciting new stories!</p>
+
+                    </div>
+
+                  <!-- ########################### -->
+                  <!-- Tutorial 2: Windows Version -->
+                  <!-- ########################### -->
+
+                    <div class="tab-pane" id="windows2" role="tabpanel">
+
+                      <div id="accordion3w" role="tablist" aria-multiselectable="true">
+                        <div class="card">
+                          <div class="card-header" role="tab" id="heading3w">
+                            <h5 class="mb-0">
+                              <a data-toggle="collapse" data-parent="#accordion3w" href="#collapse3w" aria-expanded="false" aria-controls="collapse3w">
+                                <strong>TL;DR Version</strong><div style="float: right; text-align: right; display: inline-block;">[+]</div>
+                              </a>
+                            </h5>
+                          </div>
+
+                          <div id="collapse3w" class="collapse" role="tabpanel" aria-labelledby="heading3w">
+                            <div class="card-block">
+                              This is a short summary of all of the commands and steps in this tutorial. This is mostly useful if you are going through it a second time and don't want to sift through the full details.<br /><br />
+
+                              <strong>1: Install Docker</strong><br />
+
+                              <strong>2: Create a Data File</strong><br />
+                              1-3MB will train in hours, 3-10MB will train in days, 10+MB will train in weeks on a standard laptop.
+                              <br />
+
+                              <strong>3: Start Docker Container</strong><br />
+                              Command Prompt 1:
+                              <pre class="literai__tutorial__code">docker run -ti --rm --name literai crisbal/torch-rnn:base</pre>
+
+                              <strong>4: Copy Data to Docker Container</strong><br />
+                              Command Prompt 2:
+                              <pre class="literai__tutorial__code">docker cp C:\Users\Admin\Documents\<span style="color: #D5A021;">project</span>\ literai:root/torch-rnn/data/</pre>
+
+                              <strong>5: Preprocess Data</strong><br />
+                              Command Prompt 1:
+                              <pre class="literai__tutorial__code">python scripts/preprocess.py --input_txt data/<span style="color: #D5A021;">project</span>/<span style="color: #D5A021;">project</span>.txt --output_h5 data/<span style="color: #D5A021;">project</span>.h5 --output_json data/<span style="color: #D5A021;">project</span>.json</pre>
+
+                              <strong>6: Train Your Model</strong><br />
+                              Command Prompt 1:
+                              <pre class="literai__tutorial__code">th train.lua -input_h5 data/<span style="color: #D5A021;">project</span>.h5 -input_json data/<span style="color: #D5A021;">project</span>.json -checkpoint_name output/checkpoint -rnn_size 512 -num_layers 2 -dropout 0.5 -gpu -1</pre>
+
+                              <strong>7: Save Model to Computer</strong><br />
+                              Command Prompt 2:
+                              <pre class="literai__tutorial__code">docker cp literai:root/torch-rnn/output/ C:\Users\Admin\Documents\</pre>
+
+                              <strong>8: Write Text</strong><br />
+                              Command Prompt 1:
+                              <pre class="literai__tutorial__code">th sample.lua -checkpoint output/checkpoint_<span style="color: #D5A021;">XX</span>000.t7 -length 2000 -temperature 0.7 -gpu -1</pre>
+                              Command Prompt 1:
+                              <p><span class="literai-code">exit<span></p>
+
+                              <strong>9: Upload Story to Literai</strong>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>         
+
+                      <div class="literai__tutorial__title">1: Install Docker</div>
+
+                      <p>The first step for this tutorial is to install Docker on your computer. You can find a link to download it here: <a href="https://docs.docker.com/docker-for-windows/">https://docs.docker.com/docker-for-windows/</a>.</p>
+
+                      <p>Docker is a tool that runs a simple virtual computer filled with the code we want already installed and ready to go. This makes the whole process easier since you will only need to install one program, instead of many.</p>
+
+                      <p>Please note that Docker requires Hyper-V which only available on Windows Professional and up (not on Windows Home Edition). I ran into this problem on my own PC when making this tutorial. The only solution I know is to upgrade to Windows Pro for $100 - not fun, but it works. Otherwise, use the Mac tutorial on a Mac or Linux machine. [Update: Apparently it is possible to get docker to run on Windows Home edition <a href="http://www.westerndevs.com/getting-docker-running-on-windows-10/">using Virtual Box</a>]</p>
+
+                      <p>Once you have installed Docker you should see an icon for it in the bottom right of your taskbar. When you click on the icon it should say that Docker is running. Next you need to go to settings and set the number of CPUs and Memory. Setting these values higher will make everything you run through Docker go faster. We recommend setting them to about 75-90% of what you have available.</p>
+
+                      <!--<div style="margin: 20px 50px;"><img src="/dist/css/img/tutorial1-step1.png" class="img-fluid"></div>-->
+
+                      <div class="literai__tutorial__title">2: Create a Data File</div>
+
+                      <p>Creating an artificial intelligence that can write in English would seem to be an incredibly difficult challenge - but neural networks have made it incredibly easy. Neural networks learn how to do things by being given a large number of examples and slowly teaching themselves to imitate these styles.</p>
+
+                      <p>The neural network you create in this tutorial won't know a single thing about spelling, punctuation, characters, plot, or even words. It will have to learn all of this from scratch from the literature you give it to learn on. Think of it like a child who learns to write by reading from a library with no tutor.</p>
+
+                      <p>Choosing which books to give your AI is an exciting creative endeavor. The literature it learns to write on will teach it not just the basics of the language, but will also give it a specific "voice". You could give it only literature from one author, or one genre, or get it to imitate an interesting combination of works. The possibilities are endless. It doesn't even need to be in English. Within hours a neural network could be writing in a foreign language more fluently than you'll ever be able to.</p>
+
+                      <p>For your first AI choose a simple topic, perhaps an author or book series you want to imitate. You will need to open up a simple text editor (eg. notepad). Copy and paste the full text from the writing you want into the text file. Don't worry about leaving spacing between each book, just paste them in one after another.</p>
+
+                      <p>Obviously you will need to find the text for the literature you want online. Google can get you most of the way there, but be sure to also check out Project <a href="https://www.gutenberg.org">Gutenberg</a>, <a href="http://www.imsdb.com">IMSDB</a>, and <a href="http://www.mldb.org">MLDB</a>. Also check out the data files attached to stories on Literai - you can use them to build off of the work others have already done bringing writings together. You can find stories that have data files attached on Literai by looking for the data icon:</p>
+
+                      <div style="margin: 20px 50px;"><img src="/dist/css/img/tutorials-data-icon.png" class="img-fluid"></div>
+
+                      <p>At this point you will want to come up with a name for your project. Once you have your name chosen you should save your text file as <span style="color: #D5A021; background-color: #4b4237; padding: 4px; border-radius: 4px;">project<span style="color: #ede7d9;">.txt</span></span> and place it in a new folder with the same name in your Documents folder. Throughout this tutorial we are going to keep using the word <span style="color: #D5A021; background-color: #4b4237; padding: 4px; border-radius: 4px;">project</span> and you will need to replace it in all command line arguments with whatever word you chose to name your project.</p>
+
+                      <p>The larger your dataset the better your AI will be at writing, but the longer it will take to learn. As a general rule of thumb about 1MB (200,000 words) is the minimum size you would want to train on. Anything in the 3-10MB range is pretty ideal and will take a reasonable amount of time to run. Large datasets of 10s or 100s of MBs can create incredibly good writers, but they might take weeks or even months to train on a personal computer.</p>
+
+
+                      <div class="literai__tutorial__title">3: Start Docker Container</div>
+
+                      <p>If you've already completed the first tutorial, this step is the same as last time - you can skip to copying the command below into the Command Prompt. If you haven't completed the first tutorial then read on.</p>
+
+                      <p>Now that we have Docker running and our project set up we are ready to start! To get started we are going to need to open the Windows program "Command Prompt". To open this go to the start menu and search for cmd. Command Prompt is a command line interface for your computer. It can be a little daunting if you've never used it before - but don't worry, you'll just be copying and pasting commands into it.</p>
+
+                      <p>Our first step is to start up a Docker Container with all of the packages and code we want. We will be using a program called <a href="https://github.com/jcjohnson/torch-rnn">torch-rnn</a> written in the programming language Lua by Justin Johnson (based on <a href="https://github.com/karpathy/char-rnn">char-rnn</a> by Andrej Karpathy). Cristian Baldi has created a <a href="https://github.com/crisbal/docker-torch-rnn">Docker Image</a> we can download automatically that has the program and all of its dependencies set up ready to go. (Note: the initial download is 500MB)</p>
+
+                      <p>All you have to do is paste the following code into the command prompt and hit return:</p>
+
+                      <pre class="literai__tutorial__code">docker run -ti --rm --name literai crisbal/torch-rnn:base</pre>
+
+                      <p>It will take a few moments to download everything you need. When it is done the command prompt will come up again indicating that the process finished correctly. Now the command prompt is controlling the inside of your Docker Container. If something went wrong make sure your internet connection is working and that Docker is running. In the future, when you do this step again it will happen very quickly, as it won't need to download anything.</p>
+
+                      <!--<div style="margin: 20px 50px;"><img src="/dist/css/img/tutorial2-step3.png" class="img-fluid"></div>-->
+
+                      <div class="literai__tutorial__title">4: Copy Data into Docker Container</div>
+
+                      <p>The next step is to copy the data file from your computer into the Docker Container. To do this you need to open a new Command Prompt window (go to the start menu, search for cmd, and open it like before). We need a second window as our first window is now controlling the Docker Container.</p>
+
+                      <p>Paste the following command into the second command prompt window and hit return to copy the folder you made of your model across. If the folder with your data file (project.txt) isn't oin your Documents you will need to modify the path in the code to link to the right place. Remember to replace <span style="color: #D5A021; background-color: #4b4237; padding: 4px; border-radius: 4px;">project</span> with your own project name.</p>
+
+                      <pre class="literai__tutorial__code">docker cp C:\Users\Admin\Documents\<span style="color: #D5A021;">project</span>\ literai:root/torch-rnn/data/</pre>
+
+                      <!--<div style="margin: 20px 50px;"><img src="/dist/css/img/tutorial1-step4.png" class="img-fluid"></div>-->
+
+                      <div class="literai__tutorial__title">5: Preprocess Data</div>
+
+                      <p>Before we can train our neural network we need to run a couple of processes to get the data ready for it. There are some advanced parameters you might want to tweak at this step (see the tips and tricks section), but for the most part you'll probably want to use the default command below.</p>
+
+                      <p>Go to the first Command Prompt (the one controlling your Docker Container), and enter the following command before pressing enter. (Notice that you can't paste using Ctrl+V in the window controlling your Docker container, you can instead right click on the line to paste instead).</p>
+
+                      <pre class="literai__tutorial__code">python scripts/preprocess.py --input_txt data/<span style="color: #D5A021;">project</span>/<span style="color: #D5A021;">project</span>.txt --output_h5 data/<span style="color: #D5A021;">project</span>.h5 --output_json data/<span style="color: #D5A021;">project</span>.json</pre>
+
+                      <!--<div style="margin: 20px 50px;"><img src="/dist/css/img/tutorial2-step5.png" class="img-fluid"></div>-->
+
+                      <div class="literai__tutorial__title">6: Train Your Model</div>
+
+                      <p>This is the exciting (and long) part, where we train your neural network to write. Before we do that though we should make sure your computer won't shutdown or go to sleep while the process is running. If you are running this on a laptop make sure it is plugged in and that you are in a place where the laptop can stay open for a long time. Secondly, go to the Power Options section of your computer's Control Panel (you can search for this in the start menu). Choose the display and sleep settings to never put your computer to sleep. Make sure to put it back to normal after you are done with this tutorial.</p> 
+
+                      <p>Now that you are ready to train your neural network, go to the first command prompt (the one controlling the Docker Container), paste the following command and hit enter:</p>
+
+                      <pre class="literai__tutorial__code">th train.lua -input_h5 data/<span style="color: #D5A021;">project</span>.h5 -input_json data/<span style="color: #D5A021;">project</span>.json -checkpoint_name output/checkpoint -rnn_size 512 -num_layers 2 -dropout 0.5 -gpu -1</pre>
+
+                      <p>You'll notice a few different parameters in the command above. See the tips and tricks section for more information on how to tweak these to get better results. In short though, the larger the rnn_size is the larger your neural network's brain is. In general you should increase rnn_size only when working with larger data files. Doing so will give you much better results but can drastically increase the time it takes to learn.</p>
+
+                      <!--<div style="margin: 20px 50px;"><img src="/dist/css/img/tutorial2-step6a.png" class="img-fluid"></div>-->
+
+                      <p>Now that the command is running you will see lines output to the command prompt one after another. This is showing you information about each iteration of the model's learning - the value on the right (loss =) is an evaluation metric which indicates how good your model is. The smaller this number is the better. You'll notice it very slowly going down over time. Every 1000 iterations a copy of your model will be saved (a checkpoint) and a special evaluation will be done to see how good it is. Any checkpoint can be used to write, so you can actually see how your AI is getting better over time.</p>
+
+                      <!--<div style="margin: 20px 50px;"><img src="/dist/css/img/tutorial2-step6b.png" class="img-fluid"></div>-->
+
+                      <p>This process will take a very long time (hours to days depending on your data and parameters), so you can just leave it running. If you decide to end the run prematurely you can do so by hitting Ctrl+C. You can then just take the last checkpoint created for the next step.</p>
+
+                      <div class="literai__tutorial__title">7: Save Model to Your Computer</div>
+
+                      <p>With the training now completed, you now have a neural network (model) capable of writing for you! The first thing you'll want to do is copy this model from the Docker Container on to your computer.
+
+                      Go to the second command prompt (that we used in step 4), paste the following command and hit enter:</p>
+
+                      <pre class="literai__tutorial__code">docker cp literai:root/torch-rnn/output/ C:\Users\Admin\Documents\</pre>
+
+                      <!--<div style="margin: 20px 50px;"><img src="/dist/css/img/tutorial2-step7.png" class="img-fluid"></div>-->
+
+                      <p>When this is done running you will see a new folder in your Documents folder called "output". Rename it to your <span style="color: #D5A021;">project</span> name. Inside there will be a number of files with the name "checkpoint_XX000.t7" and "checkpoint_XX000.json" where XX is a specific number. Take the .t7 file with the highest number and rename it <span style="color: #D5A021;">project</span>.t7 . This file is your completely trained model. It can now be shared and used as the input (step 2) of the first tutorial.</p>
+
+                      <p>But since we've already got a docker container running we don't need to start that all over again, instead we can jump straight to writing text.</p>
+
+                      <div class="literai__tutorial__title">8: Write Text</div>
+
+                      <p>Now that everything is set up we are finally ready to write some text! For this step we need to go back to the first command prompt where we will copy and paste the command below. You will need to replace the XX in the checkpoint name with the number from the actual checkpoint file you are using (note that you only renamed it on your computer, not within the docker container).</p>
+
+                      <pre class="literai__tutorial__code">th sample.lua -checkpoint output/checkpoint_<span style="color: #D5A021;">XX</span>000.t7 -length 2000 -temperature 0.7 -gpu -1</pre>
+
+                      <p>After a couple of minutes the computer should print out 2000 characters of text! Your AI has just written entirely novel literature! You can copy this text out of the command prompt into a text editor (like Word or Google Docs).</p>
+
+                      <!--<div style="margin: 20px 50px;"><img src="/dist/css/img/tutorial2-step8.png" class="img-fluid"></div>-->
+
+                      <p>To create more text, simply paste the command again (or hit the up arrow in the command prompt to auto-populate it). You'll notice in the command is the phrase <span class="literai-code">-length 2000</span> You can modify this number to be bigger or smaller to see more or less text. In practice you can sometimes get better results by generating lots of shorter snippets rather than a really long one. There are other parameters you can tweak here to get better results. The tips and tricks tutorial goes over these in more detail.</p>
+
+                      <p>When you are done generating text it is important to enter one last command into the first command prompt:</p>
+
+                      <p><span class="literai-code">exit<span></p>
+
+                      <p>This will close down the Docker Container and will delete everything on it. Importantly, this will also free up the name "literai" which we gave to the container in step 3. If you forget to exit and then come back to write more fiction in the future the code we have will cause an error, since the name "literai" will still be taken. You can solve this by using a different name (eg literai2) in all of the commands, but for simplicity remember to type exit!</p>
+
+                      <div class="literai__tutorial__title">9: Upload Your Story to Literai</div>
+
+                      <p>Now that you've generated text with your AI you can complete a story and upload it to Literai to share with the world.</p>
+
+                      <p>This is your chance to be creative in selecting and editing the writing your AI produces. Find the funny interesting things it says and discard the others. On literai we strongly encourage quality over quantity. Computers can write infinite amounts of fiction, but humans only really want to read a finite amount, usually no more than a page of writing. Keep it short and grab the best stuff you can. We discourage directly editing the words the AI wrote, but fixing minor spelling mistakes, spacing issues, or renaming characters to create continuity is fine.</p>
+
+                      <p>When your story is complete go to the <a href="https://www.literai.com/new/">Upload Story</a> page on Literai and enter the story, a short synopsis about the story, and a description of how you created it under Methods. Remember to upload the model (.t7) file with your story, so other people can download it to write more like it. You should also upload your data (.txt) file so other people can build off of the literature you collected.</p>
+
+                      <p>You've now successfully completed the second tutorial! Next you can read the How it Works or Tips and Tricks sections. Experiment with different literature and come up with some exciting new stories!</p>
+
+                    </div>
+
+                  </div>
+
+              </div>
+
+              <!-- ############ -->
+              <!-- How it Works -->
+              <!-- ############ -->
+
+              <div class="tab-pane" id="how" role="tabpanel">
+
+                <h1 style="text-align: center; margin-bottom: 20px;">How it Works</h1>
+
+                <p>Coming Soon!</p>
+
+                <p>Check out this amazing blog post as a great starting point: <a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/">http://karpathy.github.io/2015/05/21/rnn-effectiveness/</a></p>
+
+              </div>
+
+              <!-- ############# -->
+              <!-- Tips & Tricks -->
+              <!-- ############# -->
+
+              <div class="tab-pane" id="tips" role="tabpanel">
+
+                <h1 style="text-align: center; margin-bottom: 20px;">Tips & Tricks</h1>
+
+                <p>Coming Soon!</p>
+
+                <p>Check out the parameter options for Preprocessing, Training, and Sampling (Writing) here: <a href="https://github.com/jcjohnson/torch-rnn/blob/master/doc/flags.md">https://github.com/jcjohnson/torch-rnn/blob/master/doc/flags.md</a></p>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="literai__story__comment-box" id="tutorial-comment-box">
+
+        </div>
+
+      </div>
+
+
+      <!-- ######################################################### -->
+      <!-- ################## About Page ###################### -->
+      <!-- ######################################################### -->
+
+
+      <div id="about" class="about" style="display: none;">
+
+        <div class="literai__story__top-color-bar"></div>
+
+        <div class="literai__story__content-box" style="min-height: 300px;">
+          <div class="literai__story__content-box__title">About Artificial Fiction</div>
+
+          <div class="literai__tutorial__content">
+            <p>Recent breakthroughs in artificial intelligence are rapidly changing the world. From self driving cars to image recognition AI is now all around us. Even creative fields are starting to see artificial works too. Literai is dedicated to the promotion of the new art form of artificial fiction.</p>
+
+            <p>Artificial fiction is now possible, mostly through the use of modern neural networks that can learn how to write in English (or any other language for that matter). Generally the writing from these neural networks isn't very good, but it can be remarkably insightful into the patterns and styles of the genre it is taught to imitate.</p>
+
+            <p>It is possible for anyone with a laptop to easily train neural networks and create their own artificial fiction. We created this site to host tutorials that show everyone how easy it can be. Beyond that, Literai is a home for fiction written by computers and our goal is to encourage the careful creation of entertaining stories in this new artform.</p>
+
+            <p>We hope you will join us on this exciting journey!</p>
+          
+          </div>
+        </div>
+
+        <div class="literai__story__content-box" style="min-height: 300px;">
+          <div class="literai__story__content-box__title">About Us</div>
+
+          <div class="literai__tutorial__content">
+            <p>Literai was created by Myles O'Neill, Anthony Voutas, Isadora Lamego, and Annette Zou in late 2016. Contact us at: myles.oneill@gmail.com if you have any questions!</p>
+          </div>
+        </div>
+
+        <div class="literai__story__content-box" style="min-height: 300px;">
+          <div class="literai__story__content-box__title">Media</div>
+          <div class="literai__tutorial__content">
+            <ul>
+              <li><a href="http://www.psfk.com/2016/11/platform-lets-people-train-ai-programs-to-write-fiction.html">psfk - Platform Lets People Train AI Programs To Write Fiction [Nov 30, 2016]</a></li>
+              <li><a href="https://www.snapmunk.com/books-written-by-artificial-intelligence/">snapmunk - Harry Potter Books Written By Artificial Intelligence Are Terrible, But They're Important [Nov 29, 2016]</a></li>
+              <li><a href="http://www.100shiki.com/archives/2016/11/literai.html">100SHIKI - ニューラルネットワークで小説を書こう！『literai』(Japanese) [Nov 24, 2016]</a></li>
+              <li><a href="http://wwwhatsnew.com/2016/11/23/literai-relatos-escritos-por-sistemas-de-inteligencia-artificial/">wwwhatsnew - literai, relatos escritos por sistemas de Inteligencia artificial (Portuguese) [Nov 23, 2016]</a></li>
+              <li><a href="http://www.rushis.com/literai-fiction-written-by-computers/">Rushi's - Literai: Fiction Written by Computers [Nov 23, 2016]</a></li>
+            </ul>
+          </div>
+        </div>
+
+    </div> <!-- end main section -->
+
+    <!-- ######################################################### -->
+    <!-- ################ Javascript Imports ##################### -->
+    <!-- ######################################################### -->
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Tether for Bootstrap --> 
+    <script src="/dist/js/tether.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="/dist/js/bootstrap.min.js"></script>
+
+    <!-- Import moment.js for "days ago" -->
+    <script src="/dist/js/moment.js"></script>
+
+    <!-- Simditor Rich Text Editor -->
+    <script type="text/javascript" src="/dist/js/module.min.js"></script>
+    <script type="text/javascript" src="/dist/js/hotkeys.min.js"></script>
+    <script type="text/javascript" src="/dist/js/uploader.min.js"></script>
+    <script type="text/javascript" src="/dist/js/simditor.min.js"></script>
+
+    <!-- Sweet Alert -->
+    <script src="/dist/js/sweetalert.min.js"></script>
+
+    <!-- Google Recaptcha -->
+    <!--<script src='https://www.google.com/recaptcha/api.js'></script>-->
+
+    <!-- Fine Uploader -->
+    <script src="/dist/js/fine-uploader/fine-uploader.min.js"></script>
+
+
+    <!-- ######################################################### -->
+    <!-- ################## User Information ##################### -->
+    <!-- ######################################################### -->
+
+    <script script type="text/javascript">
+      var xmlHttp = new XMLHttpRequest();
+      xmlHttp.open( "GET", "/api/user/", false ); // false for synchronous request
+      xmlHttp.send( null );
+      var user = JSON.parse(xmlHttp.responseText);
+
+      var loggedIn = user.loggedIn; // Boolean
+      var isAdmin = user.isAdmin;   // Boolean
+      var userID = user.id; // String
+      var userName = user.userName // String // user.name
+
+    </script>
+
+    <!-- ######################################################### -->
+    <!-- #################### Page Router ######################## -->
+    <!-- ######################################################### -->
+
+    <!-- Page Router Script -->
+    <script script type="text/javascript">
+
+      //var url = {{.URL}};
+      var url = window.location.href;
+      
+      var pagehome = document.getElementById('home');
+      var pagehomesplash = document.getElementById('home-splash');
+      var page_home = false;
+
+      var pagestory = document.getElementById('story');
+      var page_story = false;
+
+      var pagestory_error = document.getElementById('story-error');
+      var page_story_error = false;
+
+      var pagenew = document.getElementById('new');
+      var page_new = false;
+
+      var pagenew_error = document.getElementById('new-error');
+      var page_new_error = false;
+
+      var pageedit = document.getElementById('edit');
+      var page_edit = false;
+
+      var pageedit_error = document.getElementById('edit-error');
+      var page_edit_error = false;
+
+      var pagedelete = document.getElementById('delete');
+      var page_delete= false;
+
+      var pagedelete_error = document.getElementById('delete-error');
+      var page_delete_error= false;
+
+      var pagetutorial = document.getElementById('tutorial');
+      var page_tutorial = false;
+
+      var pageabout = document.getElementById('about');
+      var page_about = false;      
+
+      //###################### Story Page #######################
+      if(url.includes('com/story/') > 0 ) {
+
+        var url_id = url.split('com/story/')[1];  // Get ID from URL
+
+        if (url_id.slice(-1) == "/") {
+          url_id = url_id.slice(0, -1);
+        }
+
+        // GET Story
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", "/api/story/" + url_id, false ); // false for synchronous request
+        xmlHttp.send( null );
+        var story = JSON.parse(xmlHttp.responseText);
+
+        if (story.message == "Internal Server Error") {
+
+          pagestory_error.style.display = "block";
+          var page_story_error = true;
+
+        } else if (story.author == "")  {
+          
+          pagestory_error.style.display = "block";
+          var page_story_error = true;
+
+        } else {
+
+          pagestory.style.display = "block";
+          var page_story = true;
+
+        }
+
+      //###################### New Story Page #######################
+      } else if(url.includes('com/new/') > 0 ) {
+
+        if (loggedIn) {
+          pagenew.style.display = "block";
+          var page_new = true;
+
+          // GET Story_New
+          var xmlHttp = new XMLHttpRequest();
+          xmlHttp.open( "GET", "/api/newstory/", false ); // false for synchronous request
+          xmlHttp.send( null );
+          var story_new = JSON.parse(xmlHttp.responseText);
+
+        } else {
+          pagenew_error.style.display = "block";
+          var page_new_error = true;
+        }
+
+      //###################### Edit Story Page #######################
+      } else if(url.includes('com/edit/') > 0 ) {
+        
+        var url_id = url.split('com/edit/')[1];  // Get ID from URL
+
+        if (url_id.slice(-1) == "/") {
+          url_id = url_id.slice(0, -1);
+        }
+
+        // GET Story_Edit
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", "/api/story/" + url_id, false ); // false for synchronous request
+        xmlHttp.send( null );
+        var story_edit = JSON.parse(xmlHttp.responseText);
+
+        // GET Unescaped_Story_Edit
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", "/api/unescapedstory/" + url_id, false ); // false for synchronous request
+        xmlHttp.send( null );
+        var unescaped_story_edit = JSON.parse(xmlHttp.responseText);
+
+        if (story_edit.authorID == userID || isAdmin) {
+          pageedit.style.display = "block";
+          var page_edit = true;
+        } else {
+          pageedit_error.style.display = "block";
+          var page_edit_error = true;
+        }
+
+
+      //###################### Delete Story Page #######################
+      } else if(url.includes('com/delete/') > 0 ) {
+        
+        var url_id = url.split('com/delete/')[1];  // Get ID from URL
+
+        if (url_id.slice(-1) == "/") {
+          url_id = url_id.slice(0, -1);
+        }
+
+        // GET Story_Delete
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", "/api/story/" + url_id, false ); // false for synchronous request
+        xmlHttp.send( null );
+        var story_delete = JSON.parse(xmlHttp.responseText);
+
+        if (story_delete.authorID == userID || isAdmin) {
+
+          // DELETE Story_ID
+          var xmlHttp = new XMLHttpRequest();
+          xmlHttp.open( "DELETE", "/api/story/" + url_id, false ); // false for synchronous request
+          xmlHttp.send( JSON.stringify({id:url_id}));
+
+          pagedelete.style.display = "block";
+          var page_delete = true;
+
+        } else {
+          pagedelete_error.style.display = "block";
+          var page_delete_error = true;
+        }
+
+
+      //###################### Tutorial Page #######################
+      } else if(url.includes('com/tutorial/') > 0 ) {
+
+        pagetutorial.style.display = "block";
+        var page_tutorial = true;
+
+      //###################### About Page #######################
+      } else if(url.includes('com/about/') > 0 ) {
+
+        pageabout.style.display = "block";
+        var page_about = true;
+
+      //###################### Home Page #######################
+      } else {
+
+        // GET Library
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", "/api/library", false ); // false for synchronous request
+        xmlHttp.send( null );
+        var library = JSON.parse(xmlHttp.responseText);
+
+        pagehome.style.display = "block";
+        pagehomesplash.style.display = "block";
+        var page_home = true;
+
+      }
+    </script>
+
+    <!-- ######################################################### -->
+    <!-- ################# Page Content JS ####################### -->
+    <!-- ######################################################### -->
+
+
+    <!-- ####################### Nav Bar JS ######################### -->
+
+        <!-- Render Nav Bar -->
+        <script type="text/javascript">
+
+        if (loggedIn) {
+        document.getElementById(id="navbar-user").innerHTML = 
+          ("<li class='nav-item'>" +
+              "<a class='nav-link literai__navbar__link' href='/logout/'>Log Out</a>" +
+            "</li>");
+
+        document.getElementById(id="navbar-user-small").innerHTML = 
+          ("<li class='nav-item'>" +
+              "<a class='nav-link literai__navbar__link' href='/logout/'>Log Out</a>" +
+            "</li>");
+
+        } else {
+        document.getElementById(id="navbar-user").innerHTML = 
+          (" <li class='nav-item'>" +
+                "<a class='nav-link literai__navbar__link' href='/login/'>Log In</a>" +
+            "</li>" +
+            "<li class='nav-item'>" +
+                "<a class='nav-link literai__navbar__link' href='/login/'>Sign Up</a>" +
+              "</li>");
+
+        document.getElementById(id="navbar-user-small").innerHTML = 
+          (" <li class='nav-item'>" +
+                "<a class='nav-link literai__navbar__link' href='/login/'>Log In</a>" +
+                  "</li>" +
+                  "<li class='nav-item'>" +
+                    "<a class='nav-link literai__navbar__link' href='/login/'>Sign Up</a>" +
+                  "</li>");
+        }
+
+        </script>
+
+        <!-- ####################### Home JS ######################### -->
+
+        <!-- Render Home Page -->
+        <script type="text/javascript">
+
+          if(page_home){
+
+            var home_insert_text = "";
+
+            for(var i = 0; i < library.stories.length; i++) {
+              var currentStory = library.stories[i];
+              var createdAtTime = moment(currentStory.createdAt).fromNow();
+
+            home_insert_text = home_insert_text.concat
+              ("<div class='literai__home__story'>" +
+                  "<div class='hidden-sm-down'><div class='literai__home__story-header'>" +
+                    "<div class='literai__home__story-header-left'>" +
+                      "<a href=/story/" + currentStory.id + " />" + currentStory.title + "</a>" +
+                  "</div>" +
+                  "<div class='literai__home__story-header-right'>" +
+                      "<span>" + currentStory.author + " &nbsp; · &nbsp; posted " + createdAtTime);
+
+            if (currentStory.model != "" || currentStory.dataset != "") {
+              home_insert_text = home_insert_text.concat(" &nbsp; · &nbsp;");
+            }
+
+            if (currentStory.model != "") {
+              home_insert_text = home_insert_text.concat("&nbsp; <a href="+ currentStory.model +" title='Download Model'><i class='fa fa-cubes' style='font-size: 18px; position: relative; top: 2px;'></i></a>");
+            }
+
+            if (currentStory.dataset != "") {
+              home_insert_text = home_insert_text.concat("&nbsp; <a href="+ currentStory.dataset +" title='Download Data'><i class='fa fa-book' style='font-size: 18px; position: relative; top: 2px;'></i></a>");
+            }
+
+            home_insert_text = home_insert_text.concat
+                       ("</span>" +
+                  "</div>" +
+                "</div>" +
+                "<div class='literai__home__story-body'>" +
+                    currentStory.summary +
+                "</div></div>" + 
+
+                "<div class='hidden-md-up'><div class='literai__home__story-header literai__home__story-header--mobile'>" +
+                    "<div class='literai__home__story-header-left literai__home__story-header-left--mobile'>" +
+                      "<a href=/story/" + currentStory.id + " />" + currentStory.title + "</a>" +
+                    "</div>" +
+                    "<div class='literai__home__story-header-right literai__home__story-header-right--mobile'><span>" +
+                      currentStory.author + " &nbsp; · &nbsp; posted " + createdAtTime);
+
+              if (currentStory.model != "") {
+                home_insert_text = home_insert_text.concat(" &nbsp; · &nbsp; <a href="+ currentStory.model +">Model</a>");
+              }
+
+              if (currentStory.dataset != "") {
+                home_insert_text = home_insert_text.concat(" &nbsp; · &nbsp; <a href="+ currentStory.dataset +">Data</a>");
+              }
+
+              home_insert_text = home_insert_text.concat
+                      ("</span>" +
+                    "</div>" +
+                "</div>" +
+                "<div class='literai__home__story-body'>" +
+                    currentStory.summary +
+                "</div></div>" + 
+                "</div>");
+            }
+
+            document.getElementById(id="home").innerHTML = home_insert_text;
+
+          }
+        </script>
+
+        <!-- ####################### Story JS ######################### -->
+
+        <!-- Render Story Page -->
+        <script type="text/javascript">
+
+          if(page_story) {
+
+
+            document.getElementById("story-time").innerHTML = "Posted " + moment(story.createdAt).fromNow();
+            
+            document.getElementById("story-content").innerHTML = story.content;
+
+            // Conditional Display if Text is Longer than Max Height
+            if(document.getElementById("story-content").clientHeight > document.getElementById("story-content-box").clientHeight) {
+              document.getElementById("show-more").style.display="block";
+              document.getElementById("story-content-box").style.margin="50px 50px 0 50px";
+            }
+
+
+            document.getElementById("story-methods").innerHTML = story.methods;
+
+
+            if (story.authorID == userID || isAdmin) {
+              document.getElementById("story-options").innerHTML = 
+              ("<a href='/edit/" + url_id + "''>Edit Story</a> &nbsp;&nbsp; | &nbsp;&nbsp; <a onclick='delete_story(url_id)' class='literai__story__content-box__options-delete'>Delete Story</a>");
+            }
+
+            if (story.model != "") {
+              document.getElementById(id="literai-story-model-box").innerHTML = (
+                "<div class='literai__story__model-box'>" +
+                    "<div class='literai__story__model-box-title'><i class='fa fa-cubes'></i> Model</div>" +
+                    "<a class='literai__story__model-box-button' href='"+ story.model +"' download id='story-model'>Download</a>" +
+                "</div>"
+              );
+            }
+
+            if (story.dataset != "") {
+              document.getElementById(id="literai-story-data-box").innerHTML = (
+                "<div class='literai__story__data-box'>" +
+                    "<div class='literai__story__data-box-title'><i class='fa fa-book'></i> Data</div>" +
+                    "<a class='literai__story__data-box-button' href='"+ story.dataset +"' download id='story-data'>Download</a>" +
+                "</div>"
+              );
+            }
+    
+          }
+        </script>
+
+        <!-- Function for showing more of expanded stories -->
+        <script type="text/javascript">
+          function show_more(event) {
+            document.getElementById("story-content-box").style.maxHeight="100%";
+            document.getElementById("story-content-box").style.margin="50px";
+            document.getElementById("show-more").style.display="none";
+          }
+        </script>
+
+        <!-- Delete Story "Are You Sure?" Popup -->
+        <script type="text/javascript">
+          function delete_story(story_id) {
+
+            swal({  
+              title: "Are you sure?",
+              text: "You will not be able to recover this story once it is deleted",
+              type: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#DD6B55",
+              confirmButtonText: "Delete Story",
+              cancelButtonText: "Cancel"
+              },
+              function(isConfirm){
+                if (isConfirm) {
+                   window.location.href = "/delete/" + story_id;
+                }
+              });
+
+          }
+        </script>
+
+        <!-- Render Disqus Comments -->
+        <script>
+          if(page_story) {
+
+            document.getElementById(id="story-comment-box").innerHTML = 
+              ("<div class='literai__story__comment-box-title'>Comments</div><div id='disqus_thread'></div>");
+
+            var disqus_config = function () {
+                this.page.url = url;  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = url_id; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = '//literai.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+          }
+        </script>
+
+        <!-- ############### Uploader JS (Used in New and Edit) ################ -->
+
+        <!-- Template File -->
+        <script type="text/template" id="qq-template">
+            <div class="qq-uploader-selector qq-uploader" qq-drop-area-text="Drop files here">
+                <div class="qq-total-progress-bar-container-selector qq-total-progress-bar-container">
+                    <div role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="qq-total-progress-bar-selector qq-progress-bar qq-total-progress-bar"></div>
+                </div>
+                <div class="qq-upload-drop-area-selector qq-upload-drop-area" qq-hide-dropzone>
+                    <span class="qq-upload-drop-area-text-selector"></span>
+                </div>
+                <div class="qq-upload-button-selector qq-upload-button">
+                    <div>Upload a file</div>
+                </div>
+                <span class="qq-drop-processing-selector qq-drop-processing">
+                    <span>Processing dropped files...</span>
+                    <span class="qq-drop-processing-spinner-selector qq-drop-processing-spinner"></span>
+                </span>
+                <ul class="qq-upload-list-selector qq-upload-list" aria-live="polite" aria-relevant="additions removals">
+                    <li>
+                        <div class="qq-progress-bar-container-selector">
+                            <div role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="qq-progress-bar-selector qq-progress-bar"></div>
+                        </div>
+                        <span class="qq-upload-spinner-selector qq-upload-spinner"></span>
+                        <img class="qq-thumbnail-selector" qq-max-size="100" qq-server-scale>
+                        <span class="qq-upload-file-selector qq-upload-file"></span>
+                        <span class="qq-edit-filename-icon-selector qq-edit-filename-icon" aria-label="Edit filename"></span>
+                        <input class="qq-edit-filename-selector qq-edit-filename" tabindex="0" type="text">
+                        <span class="qq-upload-size-selector qq-upload-size"></span>
+                        <button type="button" class="qq-btn qq-upload-cancel-selector qq-upload-cancel">Cancel</button>
+                        <button type="button" class="qq-btn qq-upload-retry-selector qq-upload-retry">Retry</button>
+                        <button type="button" class="qq-btn qq-upload-delete-selector qq-upload-delete">Delete</button>
+                        <span role="status" class="qq-upload-status-text-selector qq-upload-status-text"></span>
+                    </li>
+                </ul>
+
+                <dialog class="qq-alert-dialog-selector">
+                    <div class="qq-dialog-message-selector"></div>
+                    <div class="qq-dialog-buttons">
+                        <button type="button" class="qq-cancel-button-selector">Close</button>
+                    </div>
+                </dialog>
+
+                <dialog class="qq-confirm-dialog-selector">
+                    <div class="qq-dialog-message-selector"></div>
+                    <div class="qq-dialog-buttons">
+                        <button type="button" class="qq-cancel-button-selector">No</button>
+                        <button type="button" class="qq-ok-button-selector">Yes</button>
+                    </div>
+                </dialog>
+
+                <dialog class="qq-prompt-dialog-selector">
+                    <div class="qq-dialog-message-selector"></div>
+                    <input type="text">
+                    <div class="qq-dialog-buttons">
+                        <button type="button" class="qq-cancel-button-selector">Cancel</button>
+                        <button type="button" class="qq-ok-button-selector">Ok</button>
+                    </div>
+                </dialog>
+            </div>
+        </script>
+
+        <!-- ####################### New Story JS ######################### -->
+
+        <!-- Render New Sory Page -->
+        <script type="text/javascript">
+          if (page_new) {
+
+            // Simditor Rich Text Editors
+
+            Simditor.locale = 'en-US';
+
+            var simdit_new_1 = new Simditor({
+              textarea: $('#new-story-content')
+            });
+
+            var simdit_new_2 = new Simditor({
+              textarea: $('#new-story-methods')
+            });
+
+            // Prepopulate Author Field
+
+            document.getElementById("new-story-author").value = userName;
+
+            // Get New Story ID to be used by Uploaders and POST Request
+
+            new_story_id = story_new.id;
+
+            // Uploaders
+
+            var uploader_new_model = new qq.FineUploader({
+              element: document.getElementById('new-story-upload-model'),
+              request: {
+                  endpoint: '/api/model/' + new_story_id
+              },
+              retry: {
+                enableAuto: true // defaults to false
+              },
+              validation: {
+                allowedExtensions: ['t7'],
+                sizeLimit: 1000000000,
+                itemLimit: 1
+              }
+            });
+
+            var uploader_new_data = new qq.FineUploader({
+              element: document.getElementById('new-story-upload-data'),
+              request: {
+                  endpoint: '/api/dataset/' + new_story_id
+              },
+              retry: {
+                enableAuto: true // defaults to false
+              },
+              validation: {
+                allowedExtensions: ['txt'],
+                sizeLimit: 1000000000,
+                itemLimit: 1
+              }
+            });
+
+          }
+        </script>
+
+        <!-- Submit New Story Function -->
+        <script type="text/javascript">
+          function sendData_new(event) {
+
+            event.preventDefault();
+
+            var new_story_title = document.getElementById("new-story-title").value;
+            var new_story_content = document.getElementById("new-story-content").value;
+            var new_story_summary = document.getElementById("new-story-summary").value;
+            var new_story_methods = document.getElementById("new-story-methods").value;
+            var new_story_author = document.getElementById("new-story-author").value;
+            //var new_story_model = ;
+            //var new_story_data =;
+
+            // Validation
+
+            var a = document.getElementById("new-story-title-group");
+            var b = document.getElementById("new-story-summary-group");
+            var c = document.getElementById("new-story-content-group");
+            var d = document.getElementById("new-story-methods-group");
+            var e = document.getElementById("new-story-author-group");
+
+            a.className = "form-group";
+            b.className = "form-group";
+            c.className = "form-group";
+            d.className = "form-group";
+            e.className = "form-group";
+
+
+            if (new_story_title.length < 1) {
+              swal("You must enter a title for your story","","error")
+              a.className += " has-danger";
+
+            } else if (new_story_summary.length < 20) {
+              swal("Your summary must be at least 20 characters long", "You currently have " + new_story_summary.length + " characters.", "error")
+              b.className += " has-danger";
+
+            } else if (new_story_content.length < 100) {
+              swal("Your story must be at least 100 characters long", "You currently have " + new_story_content.length + " characters.", "error")
+              c.className += " has-danger";
+
+            } else if (new_story_methods.length < 100) {
+              swal("Your methods section must be at least 100 characters long", "You currently have " + new_story_methods.length + " characters.", "error")
+              d.className += " has-danger";
+
+            } else if (new_story_author.length < 1) {
+              swal("You must enter an author name", "", "error")
+              e.className += " has-danger";
+
+            } else if (new_story_author.length > 100) {
+              swal("The author name must be less than 100 characters", "", "error")
+              e.className += " has-danger";
+
+            } else {
+
+              // POST story
+            try {
+              var xmlhttp = new XMLHttpRequest();
+              xmlhttp.open("POST", "/api/story/", false);
+              xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+              xmlhttp.send(JSON.stringify({id:new_story_id, title:new_story_title, author:new_story_author, content:new_story_content, summary:new_story_summary, methods:new_story_methods}));
+              var response = JSON.parse(xmlhttp.responseText);
+
+              swal({  
+                title: "Story Uploaded!",
+                text: "Click ok to go check it out!",
+                type: "success"
+                },
+                function(){
+                  window.location.href = "/story/"+response.id;
+                });
+            } catch(e) {
+              swal("Error",e + "\n Don't worry, try presssing submit again.","error")
+            }
+          }
+        }
+        </script>
+
+        <!-- ####################### Edit Story JS ######################### -->
+
+        <!-- Render Edit Page -->
+        <script type="text/javascript">
+          if (page_edit) {
+
+            // Simditor Rich Text Editors
+
+            Simditor.locale = 'en-US';
+
+            var simdit_edit_1 = new Simditor({
+              textarea: $('#edit-story-content')
+            });
+
+            var simdit_edit_2 = new Simditor({
+              textarea: $('#edit-story-methods')
+            });
+
+            // Grab the edit story id from the url_id
+
+            var edit_story_id = url_id; 
+
+
+            // Uploaders
+
+            var uploader_edit_model = new qq.FineUploader({
+              element: document.getElementById('edit-story-upload-model'),
+              request: {
+                  endpoint: '/api/model/' + edit_story_id
+              },
+              retry: {
+                enableAuto: true // defaults to false
+              },
+              validation: {
+                allowedExtensions: ['t7'],
+                sizeLimit: 1000000000,
+                itemLimit: 1
+              }
+            });
+
+            var uploader_edit_data = new qq.FineUploader({
+              element: document.getElementById('edit-story-upload-data'),
+              request: {
+                  endpoint: '/api/dataset/' + edit_story_id
+              },
+              retry: {
+                enableAuto: true // defaults to false
+              },
+              validation: {
+                allowedExtensions: ['txt'],
+                sizeLimit: 1000000000,
+                itemLimit: 1
+              }
+            });
+
+
+            document.getElementById("edit-story-title").value = unescaped_story_edit.title;
+            document.getElementById("edit-story-author").value = unescaped_story_edit.author;
+            document.getElementById("edit-story-summary").value = unescaped_story_edit.summary;
+            simdit_edit_1.setValue(story_edit.content);
+            simdit_edit_2.setValue(story_edit.methods);
+
+            if (story_edit.model == "") {
+              document.getElementById(id="edit-model-file-url").innerHTML = ("None");
+            } else {
+              document.getElementById(id="edit-model-file-url").innerHTML = ("<a href='" + story_edit.model + "'>" + story_edit.model + "</a>");
+            }
+            
+            if (story_edit.dataset == "") {
+              document.getElementById(id="edit-data-file-url").innerHTML = ("None");
+            } else {
+              document.getElementById(id="edit-data-file-url").innerHTML = ("<a href='" + story_edit.dataset + "'>" + story_edit.dataset + "</a>");
+            }
+            
+          }
+
+        </script>
+
+        <!-- Submit Page Edits Function -->
+        <script type="text/javascript">
+          function sendData_edit(event) {
+
+            event.preventDefault();
+
+            var edit_story_title = document.getElementById("edit-story-title").value;
+            var edit_story_author = document.getElementById("edit-story-author").value
+            var edit_story_content = document.getElementById("edit-story-content").value;
+            var edit_story_summary = document.getElementById("edit-story-summary").value;
+            var edit_story_methods = document.getElementById("edit-story-methods").value;
+            //var edit_story_model = ;
+            //var edit_story_data =;
+
+            // Validation
+
+            var a = document.getElementById("edit-story-title-group");
+            var b = document.getElementById("edit-story-summary-group");
+            var c = document.getElementById("edit-story-content-group");
+            var d = document.getElementById("edit-story-methods-group");
+            var e = document.getElementById("edit-story-author-group");
+
+            a.className = "form-group";
+            b.className = "form-group";
+            c.className = "form-group";
+            d.className = "form-group";
+            e.className = "form-group";
+
+
+            if (edit_story_title.length < 1) {
+              swal("You must enter a title for your story", "", "error")
+              a.className += " has-danger";
+
+            } else if (edit_story_summary.length < 20) {
+              swal("Your summary must be at least 20 characters long", "You currently have " + edit_story_summary.length + " characters.", "error")
+              b.className += " has-danger";
+
+            } else if (edit_story_content.length < 100) {
+              swal("Your story must be at least 100 characters long", "You currently have " + edit_story_content.length + " characters.", "error")
+              c.className += " has-danger";
+
+            } else if (edit_story_methods.length < 100) {
+              swal("Your methods section must be at least 100 characters long", "You currently have " + edit_story_methods.length + " characters.", "error")
+              d.className += " has-danger";
+
+            } else if (edit_story_author.length < 1) {
+              swal("You must enter an author name", "", "error")
+              e.className += " has-danger";
+
+            } else if (edit_story_author.length > 100) {
+              swal("The author name must be less than 100 characters", "", "error")
+              e.className += " has-danger";
+
+            } else {
+
+              // POST story
+              try {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open("POST", "/api/story/", false);
+                xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+                xmlhttp.send(JSON.stringify({id:edit_story_id, title:edit_story_title, author:edit_story_author, content:edit_story_content, summary:edit_story_summary, methods:edit_story_methods}));
+                var response = JSON.parse(xmlhttp.responseText);
+
+                swal({  
+                  title: "Story Edited!",
+                  text: "Click ok to go check it out!",
+                  type: "success"
+                  },
+                  function(){
+                    window.location.href = "/story/"+response.id;
+                });
+
+              } catch(e) {
+                swal("Error",e + "\n Don't worry, try presssing submit again.","error")
+              }
+          }
+        }
+        </script>
+
+        <!-- ####################### Tutorial Page ######################### -->
+
+        <!-- Render Disqus Comments -->
+        <script>
+          if(page_tutorial) {
+
+            document.getElementById(id="tutorial-comment-box").innerHTML = 
+              ("<div class='literai__story__comment-box-title'>Comments</div><div id='disqus_thread'></div>");
+
+            var disqus_config = function () {
+                this.page.url = url;  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = 'literai-tutorial-discussion'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = '//literai.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+          }
+        </script>
+
+        <!-- ####################### Google Analytics ######################### -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-84928634-1', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+
+  </body>
+</html>
